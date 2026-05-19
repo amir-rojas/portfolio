@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Amir Rojas — Full-Stack Developer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-mark">
+    <span class="dot"></span>
+    <span class="mono">amir.rojas / portfolio</span>
+  </div>
+  <div class="nav-links">
+    <a href="#stack">Stack</a>
+    <a href="#empeno">Casa de Empeño</a>
+    <a href="#barquito">BarQuito</a>
+    <a href="#timeline">Trayectoria</a>
+    <a href="#about">Sobre mí</a>
+  </div>
+  <a href="#contact" class="nav-cta">Conectar →</a>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────────────── -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <!-- Floating tech icons -->
+  <div class="hero-icons">
+    <div class="float-icon fi-angular">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <defs><linearGradient id="ng" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff5252"/><stop offset="1" stop-color="#dd0031"/></linearGradient></defs>
+        <path fill="url(#ng)" d="M12 1 2 4.6l1.6 13.3L12 23l8.4-5.1L22 4.6 12 1Zm0 2.4 7.6 17.1h-2.3l-1.5-3.8H8.2l-1.5 3.8H4.4L12 3.4Zm-2.6 11.1h5.2L12 8.1l-2.6 6.4Z"/>
+      </svg>
+    </div>
+    <div class="float-icon fi-react">
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+        <circle cx="12" cy="12" r="2.1" fill="#61dafb"/>
+        <g stroke="#61dafb" stroke-width="0.9" fill="none">
+          <ellipse cx="12" cy="12" rx="9" ry="3.5"/>
+          <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(60 12 12)"/>
+          <ellipse cx="12" cy="12" rx="9" ry="3.5" transform="rotate(120 12 12)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="float-icon fi-ionic">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <defs><linearGradient id="ig" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#5b9eff"/><stop offset="1" stop-color="#3880ff"/></linearGradient></defs>
+        <circle cx="12" cy="12" r="6" fill="none" stroke="url(#ig)" stroke-width="2.4"/>
+        <circle cx="18.2" cy="5.8" r="2.1" fill="url(#ig)"/>
+      </svg>
+    </div>
+    <div class="float-icon fi-node">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <defs><linearGradient id="ndg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8cc84b"/><stop offset="1" stop-color="#3e8e3e"/></linearGradient></defs>
+        <path fill="url(#ndg)" d="M12 1.6 2.6 7v10L12 22.4 21.4 17V7L12 1.6Zm0 2.3 7.4 4.3v8.6L12 20.1 4.6 15.8V7.2L12 3.9Z"/>
+        <text x="12" y="15.3" text-anchor="middle" font-family="Geist, sans-serif" font-weight="700" font-size="7" fill="#cfe8a8">Node</text>
+      </svg>
+    </div>
+    <div class="float-icon fi-ts">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect width="24" height="24" rx="3" fill="#3178c6"/>
+        <text x="12" y="17" text-anchor="middle" font-family="Geist, sans-serif" font-weight="700" font-size="11" fill="#fff">TS</text>
+      </svg>
+    </div>
+    <div class="float-icon fi-tw">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="#38bdf8" d="M12 6c-2.7 0-4.4 1.4-5 4 .8-1 1.7-1.5 2.7-1.2.6.2 1 .6 1.5 1.1.8.8 1.7 1.7 3.8 1.7 2.7 0 4.4-1.4 5-4-.8 1-1.7 1.5-2.7 1.2-.6-.2-1-.6-1.5-1.1C15 6.7 14.1 6 12 6Zm-5 6c-2.7 0-4.4 1.4-5 4 .8-1 1.7-1.5 2.7-1.2.6.2 1 .6 1.5 1.1.8.8 1.7 1.7 3.8 1.7 2.7 0 4.4-1.4 5-4-.8 1-1.7 1.5-2.7 1.2-.6-.2-1-.6-1.5-1.1-.8-.8-1.7-1.7-3.8-1.7Z"/>
+      </svg>
+    </div>
+    <div class="float-icon fi-pg">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <ellipse cx="12" cy="6" rx="7.5" ry="2.5" fill="none" stroke="#336791" stroke-width="1.5"/>
+        <path d="M4.5 6v12c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5V6" fill="none" stroke="#336791" stroke-width="1.5"/>
+        <path d="M4.5 12c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5" fill="none" stroke="#336791" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="float-icon fi-supa">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <defs><linearGradient id="sb" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#3ecf8e"/><stop offset="1" stop-color="#249361"/></linearGradient></defs>
+        <path fill="url(#sb)" d="M13 2 4 13.5h7L10 22l9-11.5h-7L13 2Z"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="pulse"></span>
+      <span>DISPONIBLE PARA NUEVOS PROYECTOS · LATAM / REMOTO</span>
+    </div>
+    <h1 class="hero-title">
+      Amir Rojas<br/>
+      <span class="accent">Full-Stack Developer.</span>
+    </h1>
+    <p class="hero-sub">
+      Construyo sistemas web y móviles con arquitecturas limpias, interfaces fluidas
+      y una obsesión por la calidad del detalle. Angular, React, Ionic, Node.
+    </p>
+    <div class="hero-cta">
+      <a href="#empeno" class="btn-primary">
+        <span>Ver proyectos</span>
+        <span class="mono">→</span>
+      </a>
+      <a href="#contact" class="btn-ghost">
+        <span>Contactar</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<!-- ── STACK ───────────────────────────────────────────────────── -->
+<section class="section" id="stack" data-screen-label="02 Stack">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="eyebrow">02 / Stack tecnológico</div>
+      <h2 class="s-title">Las herramientas <span class="muted">con las que entrego.</span></h2>
+      <p class="s-desc">Stack consolidado tras años entregando producto. Lo importante no es la lista — es lo que se construye con ella, y la disciplina con la que se monta.</p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-cat reveal reveal-delay-1" data-cat="front">
+        <div class="cat-label"><span class="dotc"></span>Frontend</div>
+        <div class="stack-list">
+          <div class="stack-item">Angular <span class="lvl">v15–v17</span></div>
+          <div class="stack-item">React <span class="lvl">18 + hooks</span></div>
+          <div class="stack-item">Ionic <span class="lvl">v7</span></div>
+          <div class="stack-item">TypeScript <span class="lvl">strict</span></div>
+          <div class="stack-item">Tailwind <span class="lvl">v3</span></div>
+          <div class="stack-item">SCSS <span class="lvl">BEM</span></div>
+        </div>
+      </div>
+
+      <div class="stack-cat reveal reveal-delay-2" data-cat="back">
+        <div class="cat-label"><span class="dotc"></span>Backend</div>
+        <div class="stack-list">
+          <div class="stack-item">Node.js <span class="lvl">20 LTS</span></div>
+          <div class="stack-item">Express <span class="lvl">REST</span></div>
+          <div class="stack-item">NestJS <span class="lvl">modular</span></div>
+          <div class="stack-item">Hexagonal <span class="lvl">arch</span></div>
+          <div class="stack-item">JWT / OAuth <span class="lvl">auth</span></div>
+          <div class="stack-item">Zod / DTO <span class="lvl">validación</span></div>
+        </div>
+      </div>
+
+      <div class="stack-cat reveal reveal-delay-3" data-cat="db">
+        <div class="cat-label"><span class="dotc"></span>Datos</div>
+        <div class="stack-list">
+          <div class="stack-item">PostgreSQL <span class="lvl">15</span></div>
+          <div class="stack-item">Supabase <span class="lvl">RLS</span></div>
+          <div class="stack-item">Prisma <span class="lvl">ORM</span></div>
+          <div class="stack-item">MongoDB <span class="lvl">no-SQL</span></div>
+          <div class="stack-item">Redis <span class="lvl">cache</span></div>
+          <div class="stack-item">SQL <span class="lvl">tuning</span></div>
+        </div>
+      </div>
+
+      <div class="stack-cat reveal reveal-delay-4" data-cat="dev">
+        <div class="cat-label"><span class="dotc"></span>DevOps & Deploy</div>
+        <div class="stack-list">
+          <div class="stack-item">Vercel <span class="lvl">edge</span></div>
+          <div class="stack-item">Render <span class="lvl">services</span></div>
+          <div class="stack-item">Docker <span class="lvl">multi-stage</span></div>
+          <div class="stack-item">Git Flow <span class="lvl">trunk</span></div>
+          <div class="stack-item">GitHub Actions <span class="lvl">CI/CD</span></div>
+          <div class="stack-item">Linux <span class="lvl">CLI</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECT 1 — Casa de Empeño (Unboxing) ───────────────────── -->
+<section class="p1" id="empeno" data-screen-label="03 Proyecto Empeño">
+  <div class="p1-pin">
+    <div class="p1-stage">
+      <!-- Copy -->
+      <div class="p1-copy">
+        <div class="eyebrow">03 / Proyecto estrella</div>
+        <h2>Sistema de <span class="accent">Casa de Empeño.</span></h2>
+        <p>Plataforma operativa para casas de empeño con inventario, valuaciones, contratos y vencimientos. Construida con disciplina arquitectónica para que el dominio del negocio mande sobre los detalles técnicos.</p>
+
+        <div class="p1-steps">
+          <div class="p1-step is-active" data-step="0">
+            <span class="idx mono">[ 01 ]</span>
+            <div class="body">
+              <span class="lbl">Dashboard de operación</span>
+              <span class="desc">UI principal — KPIs, contratos, alertas</span>
+            </div>
+          </div>
+          <div class="p1-step" data-step="1">
+            <span class="idx mono">[ 02 ]</span>
+            <div class="body">
+              <span class="lbl">Arquitectura Hexagonal</span>
+              <span class="desc">Puertos / Adaptadores · dominio aislado</span>
+            </div>
+          </div>
+          <div class="p1-step" data-step="2">
+            <span class="idx mono">[ 03 ]</span>
+            <div class="body">
+              <span class="lbl">Screaming Architecture</span>
+              <span class="desc">El folder structure grita el negocio</span>
+            </div>
+          </div>
+          <div class="p1-step" data-step="3">
+            <span class="idx mono">[ 04 ]</span>
+            <div class="body">
+              <span class="lbl">Despliegue</span>
+              <span class="desc">Supabase · Vercel · Render</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Stack -->
+      <div class="p1-canvas">
+        <div class="p1-stack" data-stage="0">
+          <!-- Layer 0: dashboard -->
+          <div class="p1-layer l0">
+            <span class="layer-tag"><span class="dotc"></span>UI · Dashboard</span>
+            <div class="ui-mock">
+              <div class="topbar">
+                <span class="tl"></span><span class="tl"></span><span class="tl"></span>
+                <span class="crumbs">empeño / contratos / activos</span>
+              </div>
+              <div class="ui-body">
+                <div class="ui-side">
+                  <div class="si active"></div>
+                  <div class="si"></div><div class="si"></div><div class="si"></div>
+                  <div class="si"></div><div class="si"></div>
+                </div>
+                <div class="ui-main">
+                  <div class="kpi"><span class="l">contratos</span><span class="v">1,284</span></div>
+                  <div class="kpi"><span class="l">activos</span><span class="v up">+12.4%</span></div>
+                  <div class="kpi"><span class="l">vencidos</span><span class="v">37</span></div>
+                  <div class="chart">
+                    <svg viewBox="0 0 300 100" preserveAspectRatio="none">
+                      <path d="M0,80 L30,72 L60,60 L90,68 L120,48 L150,52 L180,30 L210,40 L240,22 L270,32 L300,16" stroke="#ff6b35" stroke-width="1.2" fill="none" filter="url(#g1)"/>
+                      <defs><filter id="g1"><feGaussianBlur stdDeviation="2"/></filter></defs>
+                      <path d="M0,80 L30,72 L60,60 L90,68 L120,48 L150,52 L180,30 L210,40 L240,22 L270,32 L300,16" stroke="#ff6b35" stroke-width="1.2" fill="none"/>
+                      <path d="M0,80 L30,72 L60,60 L90,68 L120,48 L150,52 L180,30 L210,40 L240,22 L270,32 L300,16 L300,100 L0,100Z" fill="rgba(255,107,53,0.15)"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Layer 1: hexagonal -->
+          <div class="p1-layer l1">
+            <span class="layer-tag"><span class="dotc"></span>Arquitectura · Hexagonal</span>
+            <svg class="hex-arch" viewBox="0 0 400 280" fill="none">
+              <!-- domain core -->
+              <polygon points="200,100 240,120 240,160 200,180 160,160 160,120" stroke="#ff6b35" stroke-width="1.4" fill="rgba(255,107,53,0.08)" filter="drop-shadow(0 0 6px rgba(255,107,53,0.6))"/>
+              <text x="200" y="145" text-anchor="middle" fill="#f5f5f7" font-family="JetBrains Mono" font-size="10" letter-spacing="1">DOMAIN</text>
+              <!-- ports -->
+              <circle cx="200" cy="100" r="6" fill="#000" stroke="#ffb800" stroke-width="1.2"/>
+              <circle cx="240" cy="120" r="6" fill="#000" stroke="#ffb800" stroke-width="1.2"/>
+              <circle cx="240" cy="160" r="6" fill="#000" stroke="#ffb800" stroke-width="1.2"/>
+              <circle cx="200" cy="180" r="6" fill="#000" stroke="#ffb800" stroke-width="1.2"/>
+              <circle cx="160" cy="160" r="6" fill="#000" stroke="#ffb800" stroke-width="1.2"/>
+              <circle cx="160" cy="120" r="6" fill="#000" stroke="#ffb800" stroke-width="1.2"/>
+              <!-- adapters -->
+              <g font-family="JetBrains Mono" font-size="9" fill="#a1a1a6">
+                <rect x="40" y="36" width="92" height="26" rx="4" stroke="#ff3d68" stroke-width="0.8" fill="rgba(255,61,104,0.04)"/>
+                <text x="86" y="53" text-anchor="middle">HTTP · REST</text>
+                <rect x="268" y="36" width="92" height="26" rx="4" stroke="#ff3d68" stroke-width="0.8" fill="rgba(255,61,104,0.04)"/>
+                <text x="314" y="53" text-anchor="middle">CLI · Jobs</text>
+                <rect x="40" y="220" width="92" height="26" rx="4" stroke="#3ecf8e" stroke-width="0.8" fill="rgba(62,207,142,0.04)"/>
+                <text x="86" y="237" text-anchor="middle">Postgres · Supabase</text>
+                <rect x="268" y="220" width="92" height="26" rx="4" stroke="#3ecf8e" stroke-width="0.8" fill="rgba(62,207,142,0.04)"/>
+                <text x="314" y="237" text-anchor="middle">SMTP · Webhooks</text>
+              </g>
+              <!-- connector lines -->
+              <g stroke="#ffb800" stroke-width="0.6" stroke-dasharray="2 2" opacity="0.7">
+                <line x1="132" y1="48" x2="160" y2="120"/>
+                <line x1="268" y1="48" x2="240" y2="120"/>
+                <line x1="132" y1="232" x2="160" y2="160"/>
+                <line x1="268" y1="232" x2="240" y2="160"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Layer 2: screaming arch -->
+          <div class="p1-layer l2">
+            <span class="layer-tag"><span class="dotc"></span>Folders · Screaming</span>
+            <div style="margin-top:34px">
+              <div><span class="dir">empeno/</span></div>
+              <div>├─ <span class="dir">contratos/</span></div>
+              <div>│  ├─ <span class="hl">crearContrato.use-case.ts</span></div>
+              <div>│  ├─ <span class="file">contrato.entity.ts</span></div>
+              <div>│  └─ <span class="file">contrato.repository.ts</span></div>
+              <div>├─ <span class="dir">valuaciones/</span></div>
+              <div>│  ├─ <span class="hl">tasarPrenda.use-case.ts</span></div>
+              <div>│  └─ <span class="file">avaluo.policy.ts</span></div>
+              <div>├─ <span class="dir">vencimientos/</span></div>
+              <div>│  └─ <span class="hl">notificarVencimiento.cron.ts</span></div>
+              <div>└─ <span class="dir">prendas/</span></div>
+              <div>&nbsp;&nbsp; └─ <span class="file">inventario.service.ts</span></div>
+            </div>
+          </div>
+
+          <!-- Layer 3: deploy -->
+          <div class="p1-layer l3">
+            <span class="layer-tag"><span class="dotc"></span>Deploy · Infra</span>
+            <div class="deploy-row">
+              <div class="dep-node">
+                <div class="ico" style="background:rgba(62,207,142,0.15);color:#3ecf8e;border:1px solid rgba(62,207,142,0.3)">Sb</div>
+                <div class="nm">SUPABASE</div>
+              </div>
+              <div class="arrow mono">─→</div>
+              <div class="dep-node">
+                <div class="ico" style="background:rgba(245,245,247,0.08);color:#f5f5f7;border:1px solid rgba(245,245,247,0.2)">▲</div>
+                <div class="nm">VERCEL</div>
+              </div>
+              <div class="arrow mono">─→</div>
+              <div class="dep-node">
+                <div class="ico" style="background:rgba(167,139,250,0.15);color:#a78bfa;border:1px solid rgba(167,139,250,0.3)">Rn</div>
+                <div class="nm">RENDER</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECT 2 — BarQuito (Vector draw) ──────────────────────── -->
+<section class="p2" id="barquito" data-screen-label="04 Proyecto BarQuito">
+  <div class="p2-pin">
+    <div class="p2-stage">
+      <div class="p2-copy">
+        <div class="eyebrow">04 / Proyecto estrella</div>
+        <h2>BarQuito · <span class="accent">gestión viva.</span></h2>
+        <p>Sistema de gestión para bares y restaurantes con un mapa interactivo de mesas. La interfaz se dibuja en tiempo real conforme el local respira: pedidos abiertos, cuentas cerradas, taburetes ocupados.</p>
+
+        <div class="p2-meta">
+          <div class="row"><span class="k">stack</span><span class="v">Angular · Ionic · Node</span></div>
+          <div class="row"><span class="k">data</span><span class="v">PostgreSQL · realtime</span></div>
+          <div class="row"><span class="k">deploy</span><span class="v">Vercel · Render</span></div>
+          <div class="row"><span class="k">estado</span><span class="v" style="color:var(--neon-2)">● en producción</span></div>
+        </div>
+      </div>
+
+      <div class="p2-canvas">
+        <div class="p2-floor">
+          <div class="floor-tag">PLANTA · <b>SALA PRINCIPAL</b></div>
+          <svg viewBox="0 0 720 480" preserveAspectRatio="xMidYMid meet">
+            <!-- Walls / floorplan -->
+            <path class="p2-path p2-draw" id="bq-walls" style="--len:2400"
+              d="M40,40 L680,40 L680,440 L440,440 L440,360 L360,360 L360,440 L40,440 Z" />
+
+            <!-- Bar counter -->
+            <path class="p2-path p2-draw" id="bq-bar" style="--len:800"
+              d="M80,80 L80,200 L260,200 L260,80 Z" />
+            <text class="p2-label p2-pop" x="170" y="148" text-anchor="middle">BARRA</text>
+
+            <!-- Tables (round) -->
+            <g class="p2-pop" data-tbl="1">
+              <circle class="p2-circle" cx="380" cy="110" r="22"/>
+              <text class="p2-label" x="380" y="113" text-anchor="middle">T01</text>
+            </g>
+            <g class="p2-pop" data-tbl="2">
+              <circle class="p2-circle" cx="500" cy="110" r="22"/>
+              <text class="p2-label" x="500" y="113" text-anchor="middle">T02</text>
+            </g>
+            <g class="p2-pop" data-tbl="3">
+              <circle class="p2-circle" cx="620" cy="110" r="22"/>
+              <text class="p2-label" x="620" y="113" text-anchor="middle">T03</text>
+            </g>
+            <g class="p2-pop" data-tbl="4">
+              <circle class="p2-circle" cx="380" cy="220" r="26"/>
+              <text class="p2-label" x="380" y="223" text-anchor="middle">T04</text>
+            </g>
+            <g class="p2-pop" data-tbl="5">
+              <circle class="p2-circle" cx="520" cy="220" r="26"/>
+              <text class="p2-label" x="520" y="223" text-anchor="middle">T05</text>
+            </g>
+            <g class="p2-pop" data-tbl="6">
+              <circle class="p2-circle" cx="640" cy="220" r="22"/>
+              <text class="p2-label" x="640" y="223" text-anchor="middle">T06</text>
+            </g>
+
+            <!-- Stools at bar -->
+            <g class="p2-pop">
+              <circle class="p2-stool" cx="170" cy="240" r="8"/>
+              <circle class="p2-stool" cx="200" cy="240" r="8"/>
+              <circle class="p2-stool" cx="140" cy="240" r="8"/>
+              <circle class="p2-stool" cx="110" cy="240" r="8"/>
+            </g>
+
+            <!-- Lower seating cluster -->
+            <g class="p2-pop" data-tbl="7">
+              <rect class="p2-circle" x="100" y="300" width="80" height="40" rx="4"/>
+              <text class="p2-label" x="140" y="324" text-anchor="middle">T07</text>
+            </g>
+            <g class="p2-pop" data-tbl="8">
+              <rect class="p2-circle" x="220" y="300" width="80" height="40" rx="4"/>
+              <text class="p2-label" x="260" y="324" text-anchor="middle">T08</text>
+            </g>
+            <g class="p2-pop" data-tbl="9">
+              <rect class="p2-circle" x="100" y="370" width="80" height="40" rx="4"/>
+              <text class="p2-label" x="140" y="394" text-anchor="middle">T09</text>
+            </g>
+            <g class="p2-pop" data-tbl="10">
+              <rect class="p2-circle" x="220" y="370" width="80" height="40" rx="4"/>
+              <text class="p2-label" x="260" y="394" text-anchor="middle">T10</text>
+            </g>
+
+            <!-- Service flow lines -->
+            <path class="p2-path p2-path-2 p2-draw" id="bq-flow" style="--len:1400"
+              d="M170,200 Q220,250 380,220 Q500,200 640,220 M170,200 Q220,260 260,300 M170,200 Q220,260 140,370" />
+
+            <!-- Door -->
+            <g class="p2-pop">
+              <line class="p2-path" x1="360" y1="440" x2="440" y2="440" stroke-dasharray="4 4" style="filter:none"/>
+              <text class="p2-label" x="400" y="465" text-anchor="middle" style="fill:var(--fg-mute)">ENTRADA</text>
+            </g>
+
+            <!-- Status badges -->
+            <g class="p2-pop" transform="translate(60,60)">
+              <rect width="120" height="18" rx="9" fill="rgba(255,184,0,0.1)" stroke="rgba(255,184,0,0.4)" stroke-width="0.8"/>
+              <circle cx="10" cy="9" r="3" fill="#ffb800"/>
+              <text class="p2-label" x="22" y="12" style="fill:#ffb800">10 MESAS · 4 STOOLS</text>
+            </g>
+            <g class="p2-pop" transform="translate(540,60)">
+              <rect width="140" height="18" rx="9" fill="rgba(255,61,104,0.1)" stroke="rgba(255,61,104,0.4)" stroke-width="0.8"/>
+              <circle cx="10" cy="9" r="3" fill="#ff3d68"/>
+              <text class="p2-label" x="22" y="12" style="fill:#ff3d68">FLUJO DE SERVICIO</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIMELINE ────────────────────────────────────────────────── -->
+<section class="section tl" id="timeline" data-screen-label="05 Trayectoria">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <div class="eyebrow">05 / Trayectoria</div>
+      <h2 class="s-title">Cómo llegué <span class="muted">hasta aquí.</span></h2>
+      <p class="s-desc">Una progresión de proyectos cada vez más complejos — desde landings y herramientas internas hasta sistemas operativos completos en producción.</p>
+    </div>
+
+    <div class="tl-list">
+      <div class="tl-item reveal">
+        <div class="when"><b>2024 — Hoy</b><br/>Full-Stack Engineer</div>
+        <div class="what">
+          <h3>Sistema Casa de Empeño</h3>
+          <div class="org mono">PROYECTO PROPIO · ARQUITECTURA HEXAGONAL</div>
+          <p>Diseño y construcción end-to-end: dominio, infraestructura, UI Angular y deploy en Supabase + Vercel + Render. Adopción de arquitectura hexagonal y screaming architecture como base.</p>
+          <div class="tags">
+            <span class="tag">Angular</span><span class="tag">Node</span><span class="tag">Supabase</span><span class="tag">Hexagonal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="when"><b>2024</b><br/>Frontend Lead</div>
+        <div class="what">
+          <h3>BarQuito · gestión de salón</h3>
+          <div class="org mono">CLIENTE · LOCAL EN PRODUCCIÓN</div>
+          <p>Mapa interactivo de mesas con estado en tiempo real, gestión de pedidos y cierre de cuentas. Foco en la experiencia del personal de salón: cero fricción, todo a un toque.</p>
+          <div class="tags">
+            <span class="tag">Angular</span><span class="tag">Ionic</span><span class="tag">PostgreSQL</span><span class="tag">Realtime</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="when"><b>2023</b><br/>Full-Stack Developer</div>
+        <div class="what">
+          <h3>Apps móviles híbridas con Ionic</h3>
+          <div class="org mono">FREELANCE · MÚLTIPLES CLIENTES</div>
+          <p>Construcción de aplicaciones híbridas para Android e iOS con Ionic + Angular. Integración con APIs REST, autenticación, push notifications y publicación en stores.</p>
+          <div class="tags">
+            <span class="tag">Ionic</span><span class="tag">Capacitor</span><span class="tag">Firebase</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="when"><b>2022</b><br/>Web Developer</div>
+        <div class="what">
+          <h3>Dashboards internos y APIs</h3>
+          <div class="org mono">EMPRESA · EQUIPO PRODUCTO</div>
+          <p>Desarrollo de paneles administrativos en React y APIs REST en Node/Express. Migración progresiva a TypeScript, introducción de pipelines de CI/CD y revisión de código.</p>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">Node</span><span class="tag">TypeScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="when"><b>2021</b><br/>Inicio</div>
+        <div class="what">
+          <h3>Primeros proyectos web</h3>
+          <div class="org mono">AUTODIDACTA · BOOTCAMPS</div>
+          <p>Aprendizaje de fundamentos (HTML, CSS, JavaScript), primeros sitios y herramientas pequeñas. La curiosidad y la disciplina diaria como base de todo lo que vino después.</p>
+          <div class="tags">
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ───────────────────────────────────────────────────── -->
+<section class="section about" id="about" data-screen-label="06 Sobre mí">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <div class="eyebrow">06 / Sobre mí</div>
+        <h2>El código no <span class="muted">es todo</span> — pero exige lo mismo que correr.</h2>
+        <p><b>Disciplina, ritmo y constancia.</b> Lo que aplico en cada PR es lo mismo que aplico saliendo a correr antes del amanecer: cero atajos, métrica honesta, repetir hasta que salga bien.</p>
+        <p>Fuera del editor, dos cosas me mantienen calibrado: el <b>running</b> — distancias largas, ritmos parciales, sesiones de intervalo — y la <b>música</b>, que casi siempre suena mientras compilo, depuro o escribo este portafolio.</p>
+
+        <div class="about-stats">
+          <div class="stat">
+            <div class="num">5+</div>
+            <div class="lbl">Años escribiendo</div>
+          </div>
+          <div class="stat">
+            <div class="num amber">42K</div>
+            <div class="lbl">Km recorridos</div>
+          </div>
+          <div class="stat">
+            <div class="num rose">∞</div>
+            <div class="lbl">Playlists</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal reveal-delay-2" id="aboutVis">
+        <div class="code-bg" aria-hidden="true">function run(km) {
+  const pace = 5.2;
+  return Array.from(
+    { length: km },
+    (_, i) => ({
+      split: i + 1,
+      pace,
+      hr: 152 + i,
+    })
+  );
+}
+
+const session = run(10);
+session.forEach(s => log(s));
+// → discipline.compile()
+// → music.play()
+// → keep moving</div>
+
+        <svg class="runner-svg" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+          <!-- Audio wave -->
+          <path class="wave-path" d="M10,100 Q20,80 30,100 T50,100 T70,100 T90,100 T110,100 T130,100 T150,100 T170,100 T190,100" />
+          <path class="wave-path" d="M10,108 Q20,118 30,108 T50,108 T70,108 T90,108 T110,108 T130,108 T150,108 T170,108 T190,108" style="opacity:0.4" />
+
+          <!-- Stylized runner silhouette -->
+          <g transform="translate(58,30)">
+            <!-- head -->
+            <circle class="runner-fill" cx="48" cy="14" r="9"/>
+            <circle class="runner-path" cx="48" cy="14" r="9" fill="none"/>
+            <!-- body + legs -->
+            <path class="runner-path" d="
+              M48,22
+              L46,55
+              L34,82
+              L18,108
+              M46,55
+              L62,78
+              L74,104
+              M48,30
+              L66,46
+              L82,38
+              M48,30
+              L30,46
+              L18,52
+            " />
+            <!-- back leg accent fill -->
+            <path class="runner-fill" d="M46,55 L34,82 L42,86 L50,60 Z"/>
+          </g>
+
+          <!-- track line under -->
+          <path class="runner-path" d="M0,178 Q60,170 100,176 T200,178" style="stroke:var(--neon-2);opacity:0.6"/>
+        </svg>
+
+        <div class="about-tags">
+          <span class="pill"><span class="dotc"></span>code.run()</span>
+          <span class="pill amber"><span class="dotc"></span>music · always</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA / FOOTER ────────────────────────────────────────────── -->
+<section class="cta" id="contact" data-screen-label="07 Contacto">
+  <div class="wrap-narrow">
+    <h2>¿Construimos<br/><span class="accent">algo juntos?</span></h2>
+    <p>Disponible para proyectos full-stack, sistemas internos, apps móviles híbridas y consultoría en arquitectura. Hablemos.</p>
+    <div class="cta-row">
+      <a href="/cdn-cgi/l/email-protection#7d1512111c3d1c10140f5319180b" class="btn-primary">
+        <span><span class="__cf_email__" data-cfemail="2840474449684945415a064c4d5e">[email&#160;protected]</span></span>
+        <span class="mono">↗</span>
+      </a>
+      <a href="#" class="btn-ghost">
+        <span>GitHub</span>
+        <span class="mono">↗</span>
+      </a>
+      <a href="#" class="btn-ghost">
+        <span>LinkedIn</span>
+        <span class="mono">↗</span>
+      </a>
+    </div>
+  </div>
+  <div class="foot">
+    <span>© 2026 Amir Rojas · construido con cuidado.</span>
+    <div class="links">
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">CV.pdf</a>
+    </div>
+  </div>
+</section>
+
+<!-- Tweaks panel mount -->
+<div id="tweaks-root"></div>
+
+<!-- React + Babel for tweaks -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script src="portfolio.js"></script>
+<script type="text/babel" src="portfolio-tweaks.jsx"></script>
+
+</body>
+</html>
