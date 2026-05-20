@@ -13,7 +13,7 @@
   --neon-3: #ff3d68;
 
   --t-fast: 220ms;
-  --ease: cubit-bezier(0.22, 0.61, 0.36, 1);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 
   font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
 }
@@ -28,4 +28,8 @@ body {
   padding: 0;
   background: var(--bg-0);
   color: var(--fg);
+}
+
+main {
+  padding-top: 60px;
 }

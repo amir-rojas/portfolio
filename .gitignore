@@ -25,3 +25,8 @@ pnpm-debug.log*
 
 # local design files (not part of the build)
 design/
+
+# agent / claude local config
+.agents/
+.claude/
+skills-lock.json
