@@ -28,6 +28,7 @@
       </svg>
     </div>
   </div>
+  <div class="hero-content">
   <!-- 1. Tag pill -->
   <div class="hero-tag">
     <span class="pulse"></span>
@@ -54,6 +55,7 @@
     </a>
     <a href="#contact" class="btn-ghost">Contactar</a>
   </div>
+  </div>
 </section>
 
 <style>
@@ -79,6 +81,14 @@
       radial-gradient(circle at 80% 70%, rgba(255, 61, 104, 0.1), transparent 40%);
     filter: blur(40px);
     pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Tag pill */

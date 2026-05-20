@@ -1,0 +1,228 @@
+---
+
+---
+
+<section class="section tl" id="timeline">
+  <div class="wrap">
+    <!-- Cabecera -->
+    <div class="tl-head">
+      <p class="eyebrow">Trayectoria</p>
+      <h2>Cómo llegué <span class="muted">hasta aquí.</span></h2>
+      <p class="tl-desc">Una progresión de proyectos cada vez más complejos...</p>
+    </div>
+
+    <!-- Lista -->
+    <div class="tl-list">
+      <div class="tl-item">
+        <div class="when">
+          <b>2024 — Hoy</b>
+          Full-Stack Engineer
+        </div>
+        <div class="what">
+          <h3>Sistema Casa de Empeño</h3>
+          <p class="org">PROYECTO PROPIO · ARQUITECTURA HEXAGONAL</p>
+          <p>Diseño y construcción end-to-end...</p>
+          <div class="tags">
+            <span class="tag">Angular</span>
+            <span class="tag">Node</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="when">
+          <b>2024 — Hoy</b>
+          Full-Stack Engineer
+        </div>
+        <div class="what">
+          <h3>Sistema Casa de Empeño</h3>
+          <p class="org">PROYECTO PROPIO · ARQUITECTURA HEXAGONAL</p>
+          <p>Diseño y construcción end-to-end...</p>
+          <div class="tags">
+            <span class="tag">Angular</span>
+            <span class="tag">Node</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="when">
+          <b>2024 — Hoy</b>
+          Full-Stack Engineer
+        </div>
+        <div class="what">
+          <h3>Sistema Casa de Empeño</h3>
+          <p class="org">PROYECTO PROPIO · ARQUITECTURA HEXAGONAL</p>
+          <p>Diseño y construcción end-to-end...</p>
+          <div class="tags">
+            <span class="tag">Angular</span>
+            <span class="tag">Node</span>
+          </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="when">
+          <b>2024 — Hoy</b>
+          Full-Stack Engineer
+        </div>
+        <div class="what">
+          <h3>Sistema Casa de Empeño</h3>
+          <p class="org">PROYECTO PROPIO · ARQUITECTURA HEXAGONAL</p>
+          <p>Diseño y construcción end-to-end...</p>
+          <div class="tags">
+            <span class="tag">Angular</span>
+            <span class="tag">Node</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repetí la estructura para cada entrada -->
+    </div>
+  </div>
+</section>
+
+<style>
+  .section {
+    padding: 80px 0;
+  }
+
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Cabecera */
+  .tl-head {
+    margin-bottom: 80px;
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-mute);
+    margin: 0 0 20px;
+  }
+
+  h2 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    margin: 0 0 16px;
+  }
+
+  .muted {
+    color: var(--fg-mute);
+  }
+
+  .tl-desc {
+    font-size: 17px;
+    color: var(--fg-dim);
+    max-width: 56ch;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Lista con línea vertical */
+  .tl-list {
+    position: relative;
+    padding: 32px 0;
+  }
+
+  .tl-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 220px;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 255, 255, 0.1) 8%,
+      rgba(255, 255, 255, 0.1) 92%,
+      transparent
+    );
+  }
+
+  /* Cada item */
+  .tl-item {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    padding: 28px 0;
+    position: relative;
+  }
+
+  /* Punto sobre la línea */
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: 215px;
+    top: 32px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg-0);
+    border: 2px solid var(--neon-1);
+    box-shadow: 0 0 14px rgba(255, 107, 53, 0.5);
+  }
+
+  /* Columna izquierda — fecha y rol */
+  .when {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--fg-mute);
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    padding-top: 4px;
+  }
+
+  .when b {
+    display: block;
+    color: var(--neon-1);
+    font-weight: 500;
+  }
+
+  /* Columna derecha — contenido */
+  .what h3 {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0 0 4px;
+  }
+
+  .org {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--fg-mute);
+    letter-spacing: 0.06em;
+    margin: 0 0 14px;
+  }
+
+  .what p {
+    color: var(--fg-dim);
+    font-size: 15px;
+    margin: 0 0 14px;
+    max-width: 60ch;
+    line-height: 1.65;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 4px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    color: var(--fg-dim);
+  }
+</style>
