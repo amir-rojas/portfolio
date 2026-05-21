@@ -1,75 +1,71 @@
 ---
 import { Image } from 'astro:assets';
-import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
+import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
 ---
 
 <section class="ce" id="casa-empeno">
   <div class="ce-pin">
     <div class="ce-stage">
+
       <!-- Columna izquierda: título + pasos -->
       <div class="ce-copy">
         <div class="eyebrow">02 / Toxdos</div>
         <h2>A pawnshop,<br /><span class="accent">gone digital.</span></h2>
         <p class="ce-lede">
-          Full management system for a real pawnshop in Bolivia — contracts, interest, cash
-          sessions, clients and sales. Built from scratch, shipped to production in March 2026.
+          Full management system for a real pawnshop in Bolivia — contracts,
+          interest, cash sessions, clients and sales. Built from scratch,
+          shipped to production in March 2026.
         </p>
 
-        <div class="ce-track">
-          <div class="ce-rail" aria-hidden="true">
-            <div class="ce-rail-fill"></div>
+        <div class="ce-steps">
+          <div class="ce-step is-active" data-step="0">
+            <span class="idx mono">[ 01 ]</span>
+            <div class="body">
+              <span class="lbl">The Problem</span>
+              <span class="desc">Real client · paper-based · Potosí, Bolivia</span>
+            </div>
           </div>
-          <div class="ce-steps">
-            <div class="ce-step is-active" data-step="0">
-              <span class="idx mono">[ 01 ]</span>
-              <div class="body">
-                <span class="lbl">The Problem</span>
-                <span class="desc">Real client · paper-based · Potosí, Bolivia</span>
-              </div>
+          <div class="ce-step" data-step="1">
+            <span class="idx mono">[ 02 ]</span>
+            <div class="body">
+              <span class="lbl">Architecture</span>
+              <span class="desc">Screaming Architecture · domain per module</span>
             </div>
-            <div class="ce-step" data-step="1">
-              <span class="idx mono">[ 02 ]</span>
-              <div class="body">
-                <span class="lbl">Architecture</span>
-                <span class="desc">Screaming Architecture · domain per module</span>
-              </div>
-            </div>
-            <div class="ce-step" data-step="2">
-              <span class="idx mono">[ 03 ]</span>
-              <div class="body">
-                <span class="lbl">In Production</span>
-                <span class="desc">Live dashboard · Cloudflare + Render + Supabase</span>
-              </div>
+          </div>
+          <div class="ce-step" data-step="2">
+            <span class="idx mono">[ 03 ]</span>
+            <div class="body">
+              <span class="lbl">In Production</span>
+              <span class="desc">Live · Cloudflare + Render + Supabase</span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Columna derecha: paneles visuales -->
+      <!-- Columna derecha: cartas apiladas -->
       <div class="ce-canvas">
-        <!-- Panel 0 — El Problema: project brief -->
-        <div class="ce-panel is-active" data-panel="0">
-          <div class="ce-brief">
-            <div class="brief-bar">
-              <span class="tl"></span><span class="tl"></span><span class="tl"></span>
-              <span class="brief-title mono">project-brief.md</span>
-              <span class="brief-tag mono">● mar 2026</span>
-            </div>
+        <div class="ce-stack" data-stage="0">
+
+          <!-- Capa 0 — The Problem: project brief -->
+          <div class="ce-layer l0">
+            <span class="layer-tag mono"><span class="ltdot"></span>project brief</span>
             <div class="brief-body">
-              <div class="client-row">
-                <span class="client-label mono">CLIENT</span>
-                <span class="client-val">Benjamín · Potosí, Bolivia</span>
-              </div>
-              <div class="client-row">
-                <span class="client-label mono">TYPE</span>
-                <span class="client-val">Pawnshop management system</span>
+              <div class="client-rows">
+                <div class="client-row">
+                  <span class="client-label mono">CLIENT</span>
+                  <span class="client-val">Benjamín · Potosí, Bolivia</span>
+                </div>
+                <div class="client-row">
+                  <span class="client-label mono">TYPE</span>
+                  <span class="client-val">Pawnshop management system</span>
+                </div>
               </div>
               <div class="brief-divider"></div>
               <div class="brief-section">
                 <div class="sec-hdr mono">## the problem</div>
                 <p class="sec-text">
-                  Tracking contracts, interest payments and item inventory on paper. No visibility
-                  into due dates, cash flow or customer history.
+                  Tracking contracts, interest payments and item inventory on paper.
+                  No visibility into due dates, cash flow or customer history.
                 </p>
               </div>
               <div class="brief-divider"></div>
@@ -105,131 +101,93 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Panel 1 — Arquitectura: terminal con folder structure -->
-        <div class="ce-panel" data-panel="1">
-          <div class="ce-terminal">
-            <div class="term-bar">
-              <span class="tl"></span><span class="tl"></span><span class="tl"></span>
-              <span class="term-title mono">~/toxdos-backend/src/modules</span>
-              <span class="term-status mono">● screaming arch</span>
-            </div>
+          <!-- Capa 1 — Architecture: terminal -->
+          <div class="ce-layer l1">
+            <span class="layer-tag mono"><span class="ltdot"></span>architecture</span>
             <div class="term-body mono">
               <div class="cm"># structure mirrors the business, not the framework</div>
               <div class="sp"></div>
               <div><span class="dir">modules/</span></div>
-              <div>├─ <span class="dir">pawns/</span> <span class="cm">← core domain</span></div>
-              <div>
-                ├─ <span class="dir">payments/</span>
-                <span class="cm">// interest · monthly blocks</span>
-              </div>
-              <div>
-                ├─ <span class="dir">cash-sessions/</span>
-                <span class="cm">// open · close · movements</span>
-              </div>
-              <div>
-                ├─ <span class="dir">customers/</span>
-                <span class="cm">// client registry</span>
-              </div>
-              <div>
-                ├─ <span class="dir">sales/</span>
-                <span class="cm">// unredeemed item sales</span>
-              </div>
-              <div>
-                ├─ <span class="dir">expenses/</span>
-                <span class="cm">// operational costs</span>
-              </div>
-              <div>
-                └─ <span class="dir">dashboard/</span>
-                <span class="cm">// metrics · KPIs</span>
-              </div>
+              <div>├─ <span class="dir">pawns/</span>         <span class="cm">← core domain</span></div>
+              <div>├─ <span class="dir">payments/</span>      <span class="cm">// interest · monthly blocks</span></div>
+              <div>├─ <span class="dir">cash-sessions/</span> <span class="cm">// open · close · movements</span></div>
+              <div>├─ <span class="dir">customers/</span>     <span class="cm">// client registry</span></div>
+              <div>├─ <span class="dir">sales/</span>         <span class="cm">// unredeemed item sales</span></div>
+              <div>├─ <span class="dir">expenses/</span>      <span class="cm">// operational costs</span></div>
+              <div>└─ <span class="dir">dashboard/</span>     <span class="cm">// metrics · KPIs</span></div>
               <div class="sp"></div>
               <div class="kw">## pattern (each module)</div>
               <div class="chain">
                 <span class="chain-step">router</span>
-                <span class="chain-arrow">→</span>
+                <span class="chain-arr">→</span>
                 <span class="chain-step">controller</span>
-                <span class="chain-arrow">→</span>
+                <span class="chain-arr">→</span>
                 <span class="chain-step">service</span>
-                <span class="chain-arrow">→</span>
+                <span class="chain-arr">→</span>
                 <span class="chain-step hl">repository</span>
               </div>
-              <div class="chain-note mono">// SQL lives in repository only</div>
+              <div class="cm chain-note">// SQL lives in repository only</div>
               <div class="sp"></div>
               <div class="kw">## key decision</div>
               <div>
-                <span class="tx">interest</span>
-                <span class="cm"> = </span>
-                <span class="hl">whole months</span>
+                <span class="tx">interest</span> = <span class="hl">whole months</span>
                 <span class="cm"> // matches real bolivian pawnshop policy</span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Panel 2 — En producción: screenshot real -->
-        <div class="ce-panel" data-panel="2">
-          <div class="ce-result">
-            <div class="result-header">
-              <span class="preview-tag mono">→ live result</span>
-              <div class="result-badges">
-                <span class="badge-live mono">
-                  <span class="live-dot"></span>live · Potosí, Bolivia · mar 2026
+          <!-- Capa 2 — In Production: screenshot real -->
+          <div class="ce-layer l2">
+            <span class="layer-tag mono"><span class="ltdot live"></span>live · mar 2026</span>
+            <div class="result-body">
+              <Image
+                src={toxdosDash}
+                alt="Toxdos dashboard — pawnshop management system in production"
+                class="ce-screenshot"
+              />
+              <div class="result-footer mono">
+                <span class="dep-strip">
+                  <span class="dep-item">Cloudflare Pages</span>
+                  <span class="dep-sep">+</span>
+                  <span class="dep-item">Render</span>
+                  <span class="dep-sep">+</span>
+                  <span class="dep-item">Supabase</span>
                 </span>
-                <span class="badge-wip mono">🚧 multi-sucursal</span>
+                <span class="badge-wip">🚧 multi-sucursal</span>
               </div>
             </div>
-            <Image
-              src={toxdosDashboard}
-              alt="Toxdos dashboard — pawnshop management system in production"
-              class="ce-screenshot"
-            />
-            <div class="deploy-strip mono">
-              <span class="dep-item">Cloudflare Pages</span>
-              <span class="dep-sep">+</span>
-              <span class="dep-item">Render</span>
-              <span class="dep-sep">+</span>
-              <span class="dep-item">Supabase</span>
-            </div>
           </div>
+
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <script>
   const section = document.querySelector('#casa-empeno');
-  const cePin = section?.querySelector('.ce-pin') ?? null;
+  const cePin   = section?.querySelector('.ce-pin') ?? null;
+  const ceStack = section?.querySelector('.ce-stack') as HTMLElement | null;
   const ceSteps = section ? Array.from(section.querySelectorAll('.ce-step')) : [];
-  const cePanels = section ? Array.from(section.querySelectorAll('.ce-panel')) : [];
-  const ceRailFill = section?.querySelector('.ce-rail-fill') ?? null;
 
   function updateCE() {
-    if (!cePin) return;
-    const r = cePin.getBoundingClientRect();
-    const vh = window.innerHeight;
+    if (!cePin || !ceStack) return;
+    const r     = cePin.getBoundingClientRect();
+    const vh    = window.innerHeight;
     const total = r.height - vh;
-    const passed = Math.min(Math.max(-r.top, 0), total);
-    const p = total > 0 ? passed / total : 0;
+    const p     = total > 0 ? Math.min(Math.max(-r.top, 0), total) / total : 0;
 
     let stage = 0;
     if (p >= 0.67) stage = 2;
     else if (p >= 0.34) stage = 1;
 
+    ceStack.dataset.stage = String(stage);
     ceSteps.forEach((el, idx) => {
       el.classList.toggle('is-active', idx === stage);
       el.classList.toggle('is-done', idx < stage);
     });
-    cePanels.forEach((el, idx) => {
-      el.classList.toggle('is-active', idx === stage);
-    });
-
-    if (ceRailFill) {
-      const fill = Math.min(100, Math.max(6, p * 100));
-      (ceRailFill as HTMLElement).style.setProperty('--prog', fill.toFixed(1) + '%');
-    }
   }
 
   window.addEventListener('scroll', updateCE, { passive: true });
@@ -237,15 +195,8 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
 </script>
 
 <style>
-  .ce {
-    position: relative;
-    padding: 0;
-  }
-
-  .ce-pin {
-    height: 320vh;
-    position: relative;
-  }
+  .ce { position: relative; padding: 0; }
+  .ce-pin { height: 320vh; position: relative; }
 
   .ce-stage {
     position: sticky;
@@ -256,15 +207,13 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
     align-items: center;
     overflow: hidden;
     background:
-      radial-gradient(circle at 18% 30%, rgba(255, 107, 53, 0.05), transparent 50%),
-      radial-gradient(circle at 90% 80%, rgba(255, 184, 0, 0.03), transparent 50%);
+      radial-gradient(circle at 82% 25%, rgba(255, 107, 53, 0.05), transparent 50%),
+      radial-gradient(circle at 10% 80%, rgba(255, 184, 0, 0.03), transparent 50%);
   }
 
-  .ce-copy {
-    padding: 0 56px 0 96px;
-    position: relative;
-    z-index: 2;
-  }
+  /* ── Copy (left) ─────────────────────────────────── */
+  .ce-copy { padding: 0 56px 0 96px; }
+
   .ce-copy .eyebrow {
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -304,35 +253,7 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
     margin: 0 0 36px;
   }
 
-  .ce-track {
-    position: relative;
-    display: grid;
-    grid-template-columns: 24px 1fr;
-    gap: 18px;
-  }
-  .ce-rail {
-    position: relative;
-    width: 1px;
-    background: rgba(255, 255, 255, 0.08);
-    margin: 8px auto;
-    justify-self: center;
-  }
-  .ce-rail-fill {
-    position: absolute;
-    top: 0;
-    left: -0.5px;
-    width: 2px;
-    background: linear-gradient(to bottom, var(--neon-1), var(--neon-2));
-    height: var(--prog, 0%);
-    box-shadow: 0 0 12px rgba(255, 107, 53, 0.7);
-    transition: height 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
-    border-radius: 2px;
-  }
-  .ce-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+  .ce-steps { display: flex; flex-direction: column; gap: 12px; }
   .ce-step {
     display: flex;
     align-items: flex-start;
@@ -360,9 +281,7 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
       0 0 32px rgba(255, 107, 53, 0.18),
       0 0 64px rgba(255, 107, 53, 0.08);
   }
-  .ce-step.is-done {
-    opacity: 0.62;
-  }
+  .ce-step.is-done { opacity: 0.62; }
   .ce-step .idx {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
@@ -371,16 +290,8 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
     min-width: 30px;
     padding-top: 2px;
   }
-  .ce-step .body {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .ce-step .lbl {
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-  }
+  .ce-step .body { display: flex; flex-direction: column; gap: 4px; }
+  .ce-step .lbl  { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
   .ce-step .desc {
     font-family: 'JetBrains Mono', monospace;
     font-size: 10.5px;
@@ -388,98 +299,120 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
     letter-spacing: 0.02em;
   }
 
+  /* ── Canvas + Stack (right) ──────────────────────── */
   .ce-canvas {
     position: relative;
     height: 100%;
-    padding: 70px 96px 70px 0;
-  }
-  .ce-panel {
-    position: absolute;
-    inset: 70px 96px 70px 0;
     display: grid;
     place-items: center;
-    opacity: 0;
-    transform: translateY(18px) scale(0.97);
-    filter: blur(6px);
-    transition:
-      opacity 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
-      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-      filter 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
-    pointer-events: none;
-  }
-  .ce-panel.is-active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-    pointer-events: auto;
   }
 
-  /* Chrome compartido */
-  .ce-brief,
-  .ce-terminal {
-    width: 100%;
-    max-width: 660px;
+  .ce-stack {
+    position: relative;
+    width: 540px;
+    height: 390px;
+  }
+
+  .ce-layer {
+    position: absolute;
+    inset: 0;
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     background: linear-gradient(160deg, #111111, #060606);
     box-shadow:
       inset 0 1px 0 rgba(255, 255, 255, 0.05),
-      0 30px 80px rgba(0, 0, 0, 0.55),
-      0 0 0 1px rgba(255, 107, 53, 0.05);
+      0 24px 64px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 107, 53, 0.04);
     overflow: hidden;
+    transform-origin: center center;
+    will-change: transform, opacity;
+    transition:
+      transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity   0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
   }
 
-  /* Top bar compartido */
-  .brief-bar,
-  .term-bar {
+  /* layer tag badge */
+  .layer-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 14px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
+    gap: 7px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--neon-1);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 107, 53, 0.28);
+    backdrop-filter: blur(4px);
   }
-  .brief-bar .tl,
-  .term-bar .tl {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #ff5f57;
+  .ltdot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--neon-1);
+    box-shadow: 0 0 6px var(--neon-1);
     flex-shrink: 0;
   }
-  .brief-bar .tl:nth-child(2),
-  .term-bar .tl:nth-child(2) {
-    background: #febc2e;
+  .ltdot.live {
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: livePulse 2s ease-in-out infinite;
   }
-  .brief-bar .tl:nth-child(3),
-  .term-bar .tl:nth-child(3) {
-    background: #28c840;
+  @keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+
+  /* ── Stage transforms (3 layers) ─────────────────── */
+  .ce-stack[data-stage="0"] .ce-layer.l0 {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  .ce-stack[data-stage="0"] .ce-layer.l1,
+  .ce-stack[data-stage="0"] .ce-layer.l2 {
+    transform: translate(40px, 40px) scale(0.86);
+    opacity: 0;
   }
 
-  /* Panel 0 — Brief */
-  .brief-title {
-    font-size: 10px;
-    color: var(--fg-dim);
-    letter-spacing: 0.04em;
-    margin-left: 8px;
+  .ce-stack[data-stage="1"] .ce-layer.l0 {
+    transform: translate(-82px, -28px) scale(0.92) rotate(-2deg);
+    opacity: 0.9;
   }
-  .brief-tag {
-    margin-left: auto;
-    font-size: 9px;
-    color: #4ade80;
-    letter-spacing: 0.1em;
+  .ce-stack[data-stage="1"] .ce-layer.l1 {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  .ce-stack[data-stage="1"] .ce-layer.l2 {
+    transform: translate(40px, 40px) scale(0.86);
+    opacity: 0;
   }
 
+  .ce-stack[data-stage="2"] .ce-layer.l0 {
+    transform: translate(-130px, -60px) scale(0.80) rotate(-4deg);
+    opacity: 0.5;
+  }
+  .ce-stack[data-stage="2"] .ce-layer.l1 {
+    transform: translate(-18px, 55px) scale(0.87) rotate(3deg);
+    opacity: 0.78;
+  }
+  .ce-stack[data-stage="2"] .ce-layer.l2 {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+
+  /* ── Layer 0 — Brief ─────────────────────────────── */
   .brief-body {
-    padding: 20px 24px 24px;
+    padding: 52px 26px 26px;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    height: 100%;
+    box-sizing: border-box;
   }
-
+  .client-rows { display: flex; flex-direction: column; gap: 8px; }
   .client-row {
     display: grid;
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 58px 1fr;
     gap: 12px;
     align-items: baseline;
   }
@@ -489,248 +422,114 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
     text-transform: uppercase;
     color: var(--fg-mute);
   }
-  .client-val {
-    font-size: 13px;
-    color: var(--fg);
-    font-weight: 500;
-  }
+  .client-val { font-size: 13px; color: var(--fg); font-weight: 500; }
 
-  .brief-divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.07);
-    margin: 2px 0;
-  }
+  .brief-divider { height: 1px; background: rgba(255,255,255,0.07); }
 
-  .brief-section {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .sec-hdr {
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    color: var(--neon-2);
-  }
-  .sec-text {
-    font-size: 12.5px;
-    line-height: 1.6;
-    color: var(--fg-dim);
-    max-width: 52ch;
-  }
+  .brief-section { display: flex; flex-direction: column; gap: 8px; }
+  .sec-hdr { font-size: 10px; letter-spacing: 0.06em; color: var(--neon-2); }
+  .sec-text { font-size: 12.5px; line-height: 1.6; color: var(--fg-dim); margin: 0; }
 
-  .dom-list {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .dom-item {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-  }
+  .dom-list { display: flex; flex-direction: column; gap: 6px; }
+  .dom-item { display: flex; align-items: center; gap: 10px; }
   .dom-dot {
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--neon-1);
-    box-shadow: 0 0 6px var(--neon-1);
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--neon-1); box-shadow: 0 0 5px var(--neon-1);
     flex-shrink: 0;
-    margin-bottom: 1px;
   }
-  .dom-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--fg);
-    min-width: 72px;
-  }
-  .dom-desc {
-    font-size: 10.5px;
-    color: var(--fg-mute);
-    letter-spacing: 0.02em;
-  }
+  .dom-name { font-size: 13px; font-weight: 500; color: var(--fg); min-width: 70px; }
+  .dom-desc { font-size: 10.5px; color: var(--fg-mute); letter-spacing: 0.02em; }
 
-  /* Panel 1 — Terminal */
-  .ce-terminal {
-    background: linear-gradient(160deg, #0d0a07, #060606);
-  }
-  .term-title {
-    font-size: 10px;
-    color: var(--fg-dim);
-    letter-spacing: 0.04em;
-    margin-left: 8px;
-  }
-  .term-status {
-    margin-left: auto;
-    font-size: 9px;
-    color: #ff3d68;
-    letter-spacing: 0.1em;
-  }
-
+  /* ── Layer 1 — Terminal ──────────────────────────── */
   .term-body {
-    padding: 20px 26px 26px;
-    font-size: 12px;
+    padding: 52px 26px 26px;
+    font-size: 11.5px;
     line-height: 1.75;
     color: var(--fg-dim);
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
-  .term-body .cm {
-    color: var(--fg-mute);
-  }
-  .term-body .kw {
-    color: var(--neon-2);
-    margin-top: 4px;
-    letter-spacing: 0.02em;
-  }
-  .term-body .dir {
-    color: var(--neon-2);
-  }
-  .term-body .tx {
-    color: var(--fg);
-  }
-  .term-body .hl {
-    color: var(--neon-1);
-    font-weight: 500;
-  }
-  .term-body .sp {
-    height: 6px;
-  }
+  .term-body .cm  { color: var(--fg-mute); }
+  .term-body .kw  { color: var(--neon-2); }
+  .term-body .dir { color: var(--neon-2); }
+  .term-body .tx  { color: var(--fg); }
+  .term-body .hl  { color: var(--neon-1); font-weight: 500; }
+  .term-body .sp  { height: 6px; }
 
   .chain {
     display: flex;
     align-items: center;
-    gap: 6px;
-    margin: 6px 0 2px;
+    gap: 5px;
+    margin: 5px 0 2px;
     flex-wrap: wrap;
   }
   .chain-step {
-    font-size: 11.5px;
+    font-size: 11px;
     color: var(--fg);
-    padding: 2px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2px 7px;
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 4px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255,255,255,0.03);
   }
   .chain-step.hl {
     color: var(--neon-1);
-    border-color: rgba(255, 107, 53, 0.35);
-    background: rgba(255, 107, 53, 0.06);
+    border-color: rgba(255,107,53,0.35);
+    background: rgba(255,107,53,0.06);
   }
-  .chain-arrow {
-    color: var(--fg-mute);
-    font-size: 11px;
-  }
-  .chain-note {
-    font-size: 10px;
-    color: var(--fg-mute);
-    letter-spacing: 0.02em;
-  }
+  .chain-arr  { color: var(--fg-mute); font-size: 11px; }
+  .chain-note { font-size: 10px; }
 
-  /* Panel 2 — Result */
-  .ce-result {
-    width: 100%;
-    max-width: 600px;
+  /* ── Layer 2 — Result ────────────────────────────── */
+  .result-body {
+    padding: 48px 18px 14px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    height: 100%;
+    box-sizing: border-box;
   }
-
-  .result-header {
+  .ce-screenshot {
+    width: 100%;
+    flex: 1;
+    min-height: 0;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .result-footer {
     display: flex;
     align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-shrink: 0;
   }
-  .preview-tag {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    color: var(--neon-1);
-  }
-
-  .result-badges {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .badge-live {
+  .dep-strip {
     display: flex;
     align-items: center;
     gap: 6px;
     font-size: 10px;
     letter-spacing: 0.05em;
-    color: #4ade80;
-    padding: 3px 10px;
-    border-radius: 999px;
-    border: 1px solid rgba(74, 222, 128, 0.3);
-    background: rgba(74, 222, 128, 0.06);
+    color: var(--fg-mute);
   }
-  .live-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: #4ade80;
-    box-shadow: 0 0 8px #4ade80;
-    animation: livePulse 2s ease-in-out infinite;
-  }
-  @keyframes livePulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.4;
-    }
-  }
+  .dep-item { color: var(--fg-dim); }
+  .dep-sep  { color: var(--fg-mute); }
   .badge-wip {
-    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
     letter-spacing: 0.05em;
     color: var(--neon-2);
-    padding: 3px 10px;
+    padding: 3px 9px;
     border-radius: 999px;
-    border: 1px solid rgba(255, 184, 0, 0.3);
-    background: rgba(255, 184, 0, 0.06);
+    border: 1px solid rgba(255,184,0,0.3);
+    background: rgba(255,184,0,0.06);
   }
 
-  .ce-screenshot {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow:
-      0 20px 60px rgba(0, 0, 0, 0.55),
-      0 0 0 1px rgba(255, 107, 53, 0.06);
-  }
-
-  .deploy-strip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    color: var(--fg-mute);
-    padding-left: 2px;
-  }
-  .dep-item {
-    color: var(--fg-dim);
-  }
-  .dep-sep {
-    color: var(--fg-mute);
-  }
-
-  /* Responsive */
+  /* ── Responsive ──────────────────────────────────── */
   @media (max-width: 1180px) {
-    .ce-copy {
-      padding: 0 32px 0 48px;
-    }
-    .ce-canvas {
-      padding-right: 48px;
-    }
-    .ce-panel {
-      inset: 70px 48px 70px 0;
-    }
-    .ce-stage {
-      grid-template-columns: minmax(360px, 460px) 1fr;
-    }
+    .ce-copy { padding: 0 32px 0 48px; }
+    .ce-stack { width: 460px; height: 360px; }
   }
   @media (max-width: 860px) {
     .ce-stage {
@@ -740,19 +539,18 @@ import toxdosDashboard from '../../assets/screenshots/toxdos-dash.png';
       padding: 80px 0;
       gap: 24px;
     }
-    .ce-pin {
-      height: auto;
-    }
-    .ce-panel {
-      position: relative;
-      inset: auto;
-      opacity: 1;
-      transform: none;
-      filter: none;
-    }
-    .ce-canvas {
-      padding: 20px 32px;
-      height: auto;
+    .ce-pin { height: auto; }
+    .ce-canvas { height: 380px; }
+    .ce-stack { width: 90%; max-width: 480px; height: 320px; }
+    .ce-layer { transform: none !important; opacity: 1 !important; }
+    .ce-layer.l0,
+    .ce-layer.l1 { display: none; }
+    .ce-stack[data-stage="0"] .ce-layer.l0,
+    .ce-stack[data-stage="1"] .ce-layer.l1,
+    .ce-stack[data-stage="2"] .ce-layer.l2 {
+      display: block;
+      opacity: 1 !important;
+      transform: none !important;
     }
   }
 </style>
