@@ -26,6 +26,10 @@ pnpm-debug.log*
 # local design files (not part of the build)
 design/
 
+# personal files
+CV_Amir_Adolfo_Rojas_Bellido.pdf
+prefijos de git
+
 # agent / claude local config
 .agents/
 .claude/

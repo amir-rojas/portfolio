@@ -6,7 +6,7 @@
 
   --fg: #f5f5f7;
   --fg-dim: #a1a1a6;
-  --fg-mute: #6e6e73;
+  --fg-mute: #8a8a90;
 
   --neon-1: #ff6b35;
   --neon-2: #ffb800;
@@ -32,6 +32,10 @@ body {
 
 main {
   padding-top: 60px;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 }
 
 :focus-visible {
