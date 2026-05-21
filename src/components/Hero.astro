@@ -3,6 +3,7 @@
 ---
 
 <section class="hero">
+  <div class="hero-grid"></div>
   <div class="hero-icons">
     <div class="float-icon fi-html">
       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 452 520"
@@ -76,6 +77,19 @@
     text-align: center;
     padding: 120px 32px 80px;
     overflow: hidden;
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+    pointer-events: none;
   }
 
   /* Blob de fondo */
