@@ -327,4 +327,29 @@
       transform: translateY(-20px) rotateZ(-2deg);
     }
   }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 100px 24px 60px;
+    }
+    .hero-icons {
+      display: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero-tag {
+      font-size: 9px;
+      letter-spacing: 0.04em;
+    }
+    .hero-cta {
+      flex-direction: column;
+      width: 100%;
+    }
+    .btn-primary,
+    .btn-ghost {
+      width: 100%;
+      justify-content: center;
+    }
+  }
 </style>
