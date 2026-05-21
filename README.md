@@ -44,10 +44,3 @@ src/
     └── global.css              # Tokens de diseño y estilos base
 ```
 
-## Diseño
-
-Tema oscuro con naranja como acento (`#ff6b35`). La referencia visual está en `design/` — archivos HTML/CSS del mockup original. No se importan al proyecto; son solo referencia.
-
----
-
-Construido en La Paz, Bolivia.
