@@ -1,32 +1,53 @@
-# Portfolio — Amir Rojas Bellido
+# Portfolio — Amir Rojas
 
-Personal portfolio built with [Astro](https://astro.build) and pnpm.
+Mi portfolio personal. Un proyecto doble: una forma de mostrar quién soy y qué construyo, y al mismo tiempo un espacio para aprender Astro desde cero.
+
+No es un CV. Es más un registro de cómo pienso, qué decido y por qué.
+
+---
+
+## Por qué Astro
+
+Elegí Astro porque nunca lo había usado y quería entenderlo de verdad — no solo instalarlo. El resultado: zero JS por defecto, Islands Architecture para hidratar solo lo necesario, y HTML estático que carga rápido sin pelearme con el build.
+
+Cada componente de este proyecto existe porque lo construí mientras lo aprendía.
 
 ## Stack
 
-- **Framework**: Astro 6
-- **Styles**: Vanilla CSS with design tokens
-- **Fonts**: Geist + JetBrains Mono (Google Fonts)
+- **Framework**: Astro 6 — static-first, zero JS by default
+- **Estilos**: CSS vanilla con design tokens (`--neon-1`, `--fg-dim`, etc.)
+- **Tipografía**: Geist + JetBrains Mono
+- **SEO**: `@astrojs/sitemap`, Open Graph, canonical URLs
 - **Package manager**: pnpm
 
-## Commands
+## Comandos
 
-Run from the project root:
+| Comando        | Acción                                      |
+| :------------- | :------------------------------------------ |
+| `pnpm dev`     | Servidor de desarrollo en `localhost:4321`  |
+| `pnpm build`   | Build de producción en `./dist/`            |
+| `pnpm preview` | Preview del build localmente                |
 
-| Command        | Action                                   |
-| :------------- | :--------------------------------------- |
-| `pnpm dev`     | Start dev server at `localhost:4321`     |
-| `pnpm build`   | Build for production to `./dist/`        |
-| `pnpm preview` | Preview the production build locally     |
-
-## Project structure
+## Estructura
 
 ```
 src/
+├── components/
+│   ├── Hero.astro              # Sección principal con íconos flotantes
+│   ├── Nav.astro               # Navegación fija con blur
+│   └── ProjectPortfolio.astro  # Sección sticky-scroll — este mismo proyecto
 ├── layouts/
-│   └── BaseLayout.astro   # Base layout (title prop + slot)
+│   └── BaseLayout.astro        # Layout base con SEO (title, OG, canonical)
 ├── pages/
-│   └── index.astro        # Home page
+│   └── index.astro             # Página principal
 └── styles/
-    └── global.css         # CSS tokens and base styles
+    └── global.css              # Tokens de diseño y estilos base
 ```
+
+## Diseño
+
+Tema oscuro con naranja como acento (`#ff6b35`). La referencia visual está en `design/` — archivos HTML/CSS del mockup original. No se importan al proyecto; son solo referencia.
+
+---
+
+Construido en La Paz, Bolivia.
