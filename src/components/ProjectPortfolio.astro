@@ -1,0 +1,626 @@
+---
+---
+
+<section class="pp" id="portfolio-personal">
+  <div class="pp-pin">
+    <div class="pp-stage">
+
+      <!-- Columna izquierda: título + pasos -->
+      <div class="pp-copy">
+        <div class="eyebrow">01 / Portfolio Personal</div>
+        <h2>Diseñando<br /><span class="accent">este mismo sitio.</span></h2>
+        <p class="pp-lede">
+          Un proyecto meta — documentar el proceso de pensar, decidir y construir
+          el portafolio donde estás leyendo esto.
+        </p>
+
+        <div class="pp-track">
+          <div class="pp-rail" aria-hidden="true">
+            <div class="pp-rail-fill"></div>
+          </div>
+          <div class="pp-steps">
+            <div class="pp-step is-active" data-step="0">
+              <span class="idx mono">[ 01 ]</span>
+              <div class="body">
+                <span class="lbl">Inspiración</span>
+                <span class="desc">Búsquedas, referencias, conversación con Claude</span>
+              </div>
+            </div>
+            <div class="pp-step" data-step="1">
+              <span class="idx mono">[ 02 ]</span>
+              <div class="body">
+                <span class="lbl">Decisión — ¿Por qué Astro?</span>
+                <span class="desc">Decision log · trade-offs · aprendizaje real</span>
+              </div>
+            </div>
+            <div class="pp-step" data-step="2">
+              <span class="idx mono">[ 03 ]</span>
+              <div class="body">
+                <span class="lbl">Resultado</span>
+                <span class="desc">Snippet .astro + hero renderizado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: paneles visuales -->
+      <div class="pp-canvas">
+
+        <!-- Panel 0 — Inspiración: browser + chat -->
+        <div class="pp-panel is-active" data-panel="0">
+          <div class="pp-browser">
+            <div class="browser-bar">
+              <span class="tl"></span><span class="tl"></span><span class="tl"></span>
+              <div class="browser-tabs">
+                <div class="tab is-active mono">google · portfolio dark</div>
+                <div class="tab mono">claude.ai</div>
+              </div>
+              <div class="browser-url mono">⌕ google.com/search</div>
+            </div>
+            <div class="browser-body">
+              <div class="search-bar">
+                <span class="g-mark mono">G</span>
+                <span class="search-q mono">portfolio developer dark</span>
+                <span class="search-x mono">×</span>
+              </div>
+              <div class="search-list">
+                <div class="search-q-row">
+                  <span class="ico mono">⌕</span>
+                  <span class="txt mono">portfolio developer dark</span>
+                  <span class="meta mono">hace 2 min</span>
+                </div>
+                <div class="search-q-row">
+                  <span class="ico mono">⌕</span>
+                  <span class="txt mono">web design inspiration 2026</span>
+                  <span class="meta mono">hace 5 min</span>
+                </div>
+                <div class="search-q-row">
+                  <span class="ico mono">⌕</span>
+                  <span class="txt mono">awwwards portfolios scroll telling</span>
+                  <span class="meta mono">hace 12 min</span>
+                </div>
+                <div class="search-q-row">
+                  <span class="ico mono">⌕</span>
+                  <span class="txt mono">astro framework personal site</span>
+                  <span class="meta mono">hace 18 min</span>
+                </div>
+              </div>
+              <div class="browser-divider">
+                <span class="mono">↳ después de 40 min</span>
+              </div>
+              <div class="chat-block">
+                <div class="chat-hdr mono">
+                  <span class="ai-dot"></span>claude.ai · diseño de portafolio
+                </div>
+                <div class="chat-msg me">
+                  <span class="who mono">tú</span>
+                  <div class="bubble">
+                    dame ideas para un portfolio dark, con vibes editoriales y un naranja
+                    cálido como acento. nada de hacker-cliché.
+                  </div>
+                </div>
+                <div class="chat-msg ai">
+                  <span class="who mono">claude</span>
+                  <div class="bubble">
+                    Tres direcciones:<br />
+                    <span class="li"><b>1.</b> Negro absoluto + naranja neón único · tipografía grande tipo editorial</span>
+                    <span class="li"><b>2.</b> Scroll-telling por capas — cada proyecto se cuenta en pasos</span>
+                    <span class="li"><b>3.</b> Detalles de IDE: monospace para metadata, eyebrows con guiones</span>
+                    <span class="li dim">¿quieres que profundice en alguna?</span>
+                  </div>
+                </div>
+                <div class="chat-typing mono">
+                  <span class="d"></span><span class="d"></span><span class="d"></span>
+                  <span class="lbl">escribiendo seguimiento…</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 1 — Decisión: terminal decision log -->
+        <div class="pp-panel" data-panel="1">
+          <div class="pp-terminal">
+            <div class="term-bar">
+              <span class="tl"></span><span class="tl"></span><span class="tl"></span>
+              <span class="term-title mono">~ /portfolio/docs · decision-log.md</span>
+              <span class="term-status mono">● grabando</span>
+            </div>
+            <div class="term-body mono">
+              <div class="cm"># decisión: framework para el portfolio</div>
+              <div class="cm"># fecha: 2026-04 · autor: amir</div>
+              <div class="sp"></div>
+              <div class="kw">## opciones evaluadas</div>
+              <div><span class="tx">- next.js</span>   <span class="cm">// overkill para sitio mayormente estático</span></div>
+              <div><span class="tx">- vanilla</span>   <span class="cm">// pierdo composición de componentes</span></div>
+              <div><span class="tx">- astro</span>     <span class="hl">// ← elegida</span></div>
+              <div class="sp"></div>
+              <div class="kw">## razones</div>
+              <div class="reason">
+                <span class="chk">✓</span><span class="vl">Islands Architecture</span>
+                <div class="cmt"><span class="cm">// hidrato sólo lo que necesita JS</span></div>
+              </div>
+              <div class="reason">
+                <span class="chk">✓</span><span class="vl">Zero JS by default</span>
+                <div class="cmt"><span class="cm">// lighthouse 100 sin pelearme</span></div>
+              </div>
+              <div class="reason">
+                <span class="chk">✓</span><span class="vl">Static-first</span>
+                <div class="cmt"><span class="cm">// se publica como html plano</span></div>
+              </div>
+              <div class="reason">
+                <span class="chk">✓</span><span class="vl">Primera vez usándolo</span>
+                <div class="cmt"><span class="cm">// → aprendizaje real, no zona de confort</span></div>
+              </div>
+              <div class="sp"></div>
+              <div class="kw">## status</div>
+              <div>→ <span class="ok">RESUELTO</span> · <span class="cm">in progress</span><span class="blink">▮</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2 — Resultado: código + mini preview del hero -->
+        <div class="pp-panel" data-panel="2">
+          <div class="pp-result">
+            <div class="result-code">
+              <div class="code-bar">
+                <span class="tl"></span><span class="tl"></span><span class="tl"></span>
+                <span class="file-name mono">src/components/Hero.astro</span>
+              </div>
+              <div class="code-body mono">
+                <div class="ln-row"><span class="ln">1</span><span class="cm">---</span></div>
+                <div class="ln-row"><span class="ln">2</span><span class="kw">const</span> <span class="vr">name</span> = <span class="str">"Amir Rojas"</span>;</div>
+                <div class="ln-row"><span class="ln">3</span><span class="kw">const</span> <span class="vr">role</span> = <span class="str">"Full-Stack Developer"</span>;</div>
+                <div class="ln-row"><span class="ln">4</span><span class="cm">---</span></div>
+                <div class="ln-row"><span class="ln">5</span><span>&nbsp;</span></div>
+                <div class="ln-row"><span class="ln">6</span><span class="tg">&lt;section</span> <span class="atr">class</span>=<span class="str">"hero"</span><span class="tg">&gt;</span></div>
+                <div class="ln-row"><span class="ln">7</span>&nbsp;&nbsp;<span class="tg">&lt;span</span> <span class="atr">class</span>=<span class="str">"tag"</span><span class="tg">&gt;</span>● disponible<span class="tg">&lt;/span&gt;</span></div>
+                <div class="ln-row"><span class="ln">8</span>&nbsp;&nbsp;<span class="tg">&lt;h1&gt;</span></div>
+                <div class="ln-row"><span class="ln">9</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tg">&lbrace;</span>name<span class="tg">&rbrace;</span><span class="tg">&lt;br/&gt;</span></div>
+                <div class="ln-row"><span class="ln">10</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tg">&lt;span</span> <span class="atr">class</span>=<span class="str">"accent"</span><span class="tg">&gt;</span><span class="tg">&lbrace;</span>role<span class="tg">&rbrace;</span>.<span class="tg">&lt;/span&gt;</span></div>
+                <div class="ln-row"><span class="ln">11</span>&nbsp;&nbsp;<span class="tg">&lt;/h1&gt;</span></div>
+                <div class="ln-row"><span class="ln">12</span><span class="tg">&lt;/section&gt;</span></div>
+              </div>
+            </div>
+            <div class="result-preview">
+              <div class="preview-tag mono">→ render</div>
+              <div class="mini-hero">
+                <div class="mini-bg"></div>
+                <div class="mini-grid"></div>
+                <div class="mini-content">
+                  <div class="mini-pill mono"><span class="dotg"></span>DISPONIBLE</div>
+                  <div class="mini-title">
+                    <span>Amir Rojas</span>
+                    <span class="mini-accent">Full-Stack<br />Developer.</span>
+                  </div>
+                  <div class="mini-actions">
+                    <span class="mini-btn primary">Ver proyectos →</span>
+                    <span class="mini-btn ghost">Contactar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const ppPin = document.querySelector('.pp-pin');
+  const ppSteps = Array.from(document.querySelectorAll('.pp-step'));
+  const ppPanels = Array.from(document.querySelectorAll('.pp-panel'));
+  const ppRailFill = document.querySelector('.pp-rail-fill');
+
+  function updatePP() {
+    if (!ppPin) return;
+    const r = ppPin.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = r.height - vh;
+    const passed = Math.min(Math.max(-r.top, 0), total);
+    const p = total > 0 ? passed / total : 0;
+
+    let stage = 0;
+    if (p >= 0.67) stage = 2;
+    else if (p >= 0.34) stage = 1;
+
+    ppSteps.forEach((el, idx) => {
+      el.classList.toggle('is-active', idx === stage);
+      el.classList.toggle('is-done', idx < stage);
+    });
+    ppPanels.forEach((el, idx) => {
+      el.classList.toggle('is-active', idx === stage);
+    });
+
+    if (ppRailFill) {
+      const fill = Math.min(100, Math.max(6, p * 100));
+      (ppRailFill as HTMLElement).style.setProperty('--prog', fill.toFixed(1) + '%');
+    }
+  }
+
+  window.addEventListener('scroll', updatePP, { passive: true });
+  updatePP();
+</script>
+
+<style>
+  .pp { position: relative; padding: 0; }
+
+  .pp-pin { height: 320vh; position: relative; }
+
+  .pp-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(420px, 520px) 1fr;
+    align-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 18% 30%, rgba(255, 107, 53, 0.05), transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(255, 184, 0, 0.03), transparent 50%);
+  }
+
+  .pp-copy {
+    padding: 0 56px 0 96px;
+    position: relative;
+    z-index: 2;
+  }
+  .pp-copy .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-mute);
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pp-copy .eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: var(--neon-1);
+    box-shadow: 0 0 8px var(--neon-1);
+  }
+  .pp-copy h2 {
+    font-size: clamp(38px, 4.6vw, 60px);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    margin: 0 0 18px;
+  }
+  .pp-copy h2 .accent {
+    background: linear-gradient(120deg, var(--neon-1), var(--neon-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .pp-lede {
+    color: var(--fg-dim);
+    font-size: 15px;
+    line-height: 1.65;
+    max-width: 42ch;
+    margin: 0 0 36px;
+  }
+
+  .pp-track {
+    position: relative;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 18px;
+  }
+  .pp-rail {
+    position: relative;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.08);
+    margin: 8px auto;
+    justify-self: center;
+  }
+  .pp-rail-fill {
+    position: absolute;
+    top: 0;
+    left: -0.5px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--neon-1), var(--neon-2));
+    height: var(--prog, 0%);
+    box-shadow: 0 0 12px rgba(255, 107, 53, 0.7);
+    transition: height 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    border-radius: 2px;
+  }
+  .pp-steps { display: flex; flex-direction: column; gap: 14px; }
+  .pp-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.015);
+    opacity: 0.32;
+    transform: translateX(-6px);
+    transition: all 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .pp-step.is-active {
+    opacity: 1;
+    transform: translateX(0);
+    border-color: rgba(255, 107, 53, 0.45);
+    background: linear-gradient(160deg, rgba(255, 107, 53, 0.08), rgba(255, 107, 53, 0.02));
+    box-shadow:
+      0 0 0 1px rgba(255, 107, 53, 0.15) inset,
+      0 0 32px rgba(255, 107, 53, 0.18),
+      0 0 64px rgba(255, 107, 53, 0.08);
+  }
+  .pp-step.is-done { opacity: 0.62; }
+  .pp-step .idx {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--neon-1);
+    letter-spacing: 0.1em;
+    min-width: 30px;
+    padding-top: 2px;
+  }
+  .pp-step .body { display: flex; flex-direction: column; gap: 4px; }
+  .pp-step .lbl { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
+  .pp-step .desc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--fg-mute);
+    letter-spacing: 0.02em;
+  }
+
+  .pp-canvas { position: relative; height: 100%; padding: 70px 96px 70px 0; }
+  .pp-panel {
+    position: absolute;
+    inset: 70px 96px 70px 0;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+    filter: blur(6px);
+    transition:
+      opacity 0.55s cubic-bezier(0.22, 0.61, 0.36, 1),
+      transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+      filter 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+    pointer-events: none;
+  }
+  .pp-panel.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    pointer-events: auto;
+  }
+
+  /* Chrome compartido */
+  .pp-browser, .pp-terminal, .result-code {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: linear-gradient(160deg, #111111, #060606);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 30px 80px rgba(0, 0, 0, 0.55),
+      0 0 0 1px rgba(255, 107, 53, 0.05);
+    overflow: hidden;
+  }
+  .browser-bar, .term-bar, .code-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .browser-bar .tl, .term-bar .tl, .code-bar .tl {
+    width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; flex-shrink: 0;
+  }
+  .browser-bar .tl:nth-child(2), .term-bar .tl:nth-child(2), .code-bar .tl:nth-child(2) { background: #febc2e; }
+  .browser-bar .tl:nth-child(3), .term-bar .tl:nth-child(3), .code-bar .tl:nth-child(3) { background: #28c840; }
+
+  /* Panel 0 — Browser */
+  .pp-browser { max-width: 660px; }
+  .browser-tabs { display: flex; gap: 6px; margin-left: 10px; }
+  .browser-tabs .tab {
+    font-size: 10px; padding: 5px 10px; border-radius: 6px;
+    color: var(--fg-mute); letter-spacing: 0.02em; border: 1px solid transparent;
+  }
+  .browser-tabs .tab.is-active {
+    color: var(--fg);
+    background: rgba(255, 107, 53, 0.08);
+    border-color: rgba(255, 107, 53, 0.25);
+  }
+  .browser-url {
+    margin-left: auto; font-size: 10px; color: var(--fg-mute);
+    padding: 5px 10px; border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px; background: rgba(0,0,0,0.3); letter-spacing: 0.02em;
+  }
+  .browser-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 16px; }
+  .search-bar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 16px; border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 999px; background: rgba(255,255,255,0.02);
+  }
+  .g-mark { font-weight: 700; font-size: 14px; color: var(--neon-1); }
+  .search-q { flex: 1; font-size: 13px; color: var(--fg); letter-spacing: 0; }
+  .search-x { color: var(--fg-mute); font-size: 14px; }
+  .search-list { display: flex; flex-direction: column; gap: 2px; padding-top: 4px; }
+  .search-q-row {
+    display: grid; grid-template-columns: 16px 1fr auto;
+    gap: 12px; align-items: center; padding: 8px 4px;
+    font-size: 12px; border-bottom: 1px dashed rgba(255,255,255,0.08);
+  }
+  .search-q-row .ico { color: var(--fg-mute); font-size: 11px; }
+  .search-q-row .txt { color: var(--fg-dim); letter-spacing: 0; }
+  .search-q-row:first-child .txt { color: var(--neon-1); }
+  .search-q-row .meta { color: #3a3a3d; font-size: 9px; letter-spacing: 0.06em; }
+  .browser-divider {
+    display: flex; align-items: center; gap: 12px;
+    font-size: 10px; color: var(--fg-mute); letter-spacing: 0.08em; margin: 2px 0;
+  }
+  .browser-divider::before, .browser-divider::after {
+    content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08);
+  }
+  .chat-block {
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 10px;
+    padding: 14px; background: rgba(0,0,0,0.35);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .chat-hdr {
+    font-size: 10px; letter-spacing: 0.08em; color: var(--fg-mute);
+    display: flex; align-items: center; gap: 8px;
+    padding-bottom: 8px; border-bottom: 1px dashed rgba(255,255,255,0.08);
+  }
+  .ai-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--neon-1); box-shadow: 0 0 8px var(--neon-1);
+  }
+  .chat-msg { display: grid; grid-template-columns: 36px 1fr; gap: 10px; align-items: flex-start; }
+  .chat-msg .who {
+    font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--fg-mute); padding: 6px 0;
+  }
+  .chat-msg.ai .who { color: var(--neon-1); }
+  .chat-msg .bubble {
+    font-size: 12.5px; line-height: 1.55; padding: 9px 12px;
+    border-radius: 10px; background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.08); color: var(--fg);
+  }
+  .chat-msg.ai .bubble {
+    background: rgba(255,107,53,0.06); border-color: rgba(255,107,53,0.2);
+  }
+  .chat-msg .bubble .li { display: block; font-size: 12px; color: var(--fg-dim); padding: 2px 0; }
+  .chat-msg .bubble .li b { color: var(--neon-2); font-weight: 600; }
+  .chat-msg .bubble .li.dim { color: var(--fg-mute); font-style: italic; }
+  .chat-typing {
+    display: flex; align-items: center; gap: 8px;
+    padding-left: 46px; font-size: 10px; color: var(--fg-mute); letter-spacing: 0.04em;
+  }
+  .chat-typing .d {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--neon-1); opacity: 0.5;
+    animation: chatDot 1.2s ease-in-out infinite;
+  }
+  .chat-typing .d:nth-child(2) { animation-delay: 0.15s; }
+  .chat-typing .d:nth-child(3) { animation-delay: 0.3s; }
+  @keyframes chatDot {
+    0%, 100% { opacity: 0.25; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-2px); }
+  }
+
+  /* Panel 1 — Terminal */
+  .pp-terminal { max-width: 660px; background: linear-gradient(160deg, #0d0a07, #060606); }
+  .term-title { font-size: 10px; color: var(--fg-dim); letter-spacing: 0.04em; margin-left: 8px; }
+  .term-status { margin-left: auto; font-size: 9px; color: #ff3d68; letter-spacing: 0.1em; }
+  .term-body { padding: 22px 26px 26px; font-size: 12px; line-height: 1.7; color: var(--fg-dim); }
+  .term-body .cm { color: var(--fg-mute); }
+  .term-body .kw { color: var(--neon-2); margin-top: 6px; letter-spacing: 0.02em; }
+  .term-body .tx { color: var(--fg); }
+  .term-body .hl { color: var(--neon-1); font-weight: 500; }
+  .term-body .vl { color: var(--fg); font-weight: 500; }
+  .term-body .sp { height: 8px; }
+  .term-body .reason {
+    display: grid; grid-template-columns: 18px 1fr;
+    align-items: baseline; gap: 4px 8px;
+  }
+  .term-body .reason .cmt { grid-column: 2; }
+  .term-body .chk { color: var(--neon-1); font-weight: 700; text-shadow: 0 0 6px rgba(255,107,53,0.6); }
+  .term-body .ok {
+    color: #4ade80; background: rgba(74,222,128,0.1);
+    padding: 1px 8px; border-radius: 4px;
+    border: 1px solid rgba(74,222,128,0.3);
+    font-size: 10px; letter-spacing: 0.1em;
+  }
+  .blink { display: inline-block; margin-left: 6px; color: var(--neon-1); animation: cursorBlink 1s steps(2) infinite; }
+  @keyframes cursorBlink { 50% { opacity: 0; } }
+
+  /* Panel 2 — Resultado */
+  .pp-result {
+    display: grid; grid-template-columns: 1.05fr 0.95fr;
+    gap: 18px; width: 100%; max-width: 780px; align-items: stretch;
+  }
+  .result-code {
+    background: linear-gradient(160deg, #0c0a07, #060606);
+    display: flex; flex-direction: column;
+  }
+  .file-name { font-size: 10px; color: var(--fg-dim); letter-spacing: 0.04em; margin-left: 8px; }
+  .code-body { padding: 14px 0 16px; font-size: 11.5px; line-height: 1.75; color: var(--fg-dim); flex: 1; }
+  .ln-row { display: grid; grid-template-columns: 38px 1fr; align-items: baseline; padding: 0 14px 0 0; }
+  .ln-row .ln {
+    color: #3a3a3d; font-size: 10px; text-align: right;
+    padding-right: 14px; border-right: 1px solid rgba(255,255,255,0.08); user-select: none;
+  }
+  .code-body .kw  { color: #ff85a0; }
+  .code-body .vr  { color: var(--neon-2); }
+  .code-body .str { color: #a7e3a7; }
+  .code-body .cm  { color: var(--fg-mute); }
+  .code-body .tg  { color: var(--neon-1); }
+  .code-body .atr { color: #ffd082; }
+  .result-preview { display: flex; flex-direction: column; gap: 10px; }
+  .preview-tag { font-size: 10px; letter-spacing: 0.1em; color: var(--neon-1); padding-left: 4px; }
+  .mini-hero {
+    position: relative; flex: 1; border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.14); background: #000; overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 20px 60px rgba(0,0,0,0.5);
+    min-height: 280px;
+  }
+  .mini-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 40%, rgba(255,107,53,0.22), transparent 55%),
+      radial-gradient(circle at 75% 70%, rgba(255,61,104,0.14), transparent 55%);
+    filter: blur(18px);
+  }
+  .mini-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+  .mini-content {
+    position: relative; z-index: 2; padding: 26px 22px; height: 100%;
+    display: flex; flex-direction: column; gap: 16px;
+    align-items: flex-start; justify-content: center;
+  }
+  .mini-pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 8.5px; letter-spacing: 0.18em; padding: 5px 10px;
+    border: 1px solid rgba(255,255,255,0.14); border-radius: 999px;
+    color: var(--fg-dim); background: rgba(255,255,255,0.02);
+  }
+  .dotg { width: 5px; height: 5px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 6px #4ade80; }
+  .mini-title {
+    font-size: clamp(22px, 2.2vw, 30px); font-weight: 600;
+    line-height: 0.95; letter-spacing: -0.04em;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .mini-accent {
+    background: linear-gradient(120deg, var(--neon-1), var(--neon-2), #ff3d68);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 18px rgba(255,107,53,0.4));
+  }
+  .mini-actions { display: flex; gap: 8px; margin-top: 6px; }
+  .mini-btn { font-size: 10px; padding: 7px 12px; border-radius: 999px; letter-spacing: -0.01em; }
+  .mini-btn.primary { background: var(--fg); color: #000; font-weight: 500; }
+  .mini-btn.ghost { border: 1px solid rgba(255,255,255,0.14); color: var(--fg); }
+
+  /* Responsive */
+  @media (max-width: 1180px) {
+    .pp-copy { padding: 0 32px 0 48px; }
+    .pp-canvas { padding-right: 48px; }
+    .pp-panel { inset: 70px 48px 70px 0; }
+    .pp-stage { grid-template-columns: minmax(360px, 460px) 1fr; }
+  }
+  @media (max-width: 860px) {
+    .pp-stage { grid-template-columns: 1fr; height: auto; min-height: 100vh; padding: 80px 0; gap: 24px; }
+    .pp-pin { height: auto; }
+    .pp-panel { position: relative; inset: auto; opacity: 1; transform: none; filter: none; }
+    .pp-canvas { padding: 20px 32px; height: auto; }
+    .pp-result { grid-template-columns: 1fr; }
+  }
+</style>
