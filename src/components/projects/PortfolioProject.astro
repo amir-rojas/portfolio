@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import heroPreview from '../../assets/screenshots/hero-preview.png';
 ---
 
 <section class="pp" id="portfolio-personal">
@@ -165,21 +167,11 @@
           <div class="pp-result">
             <div class="result-preview">
               <div class="preview-tag mono">→ live result</div>
-              <div class="mini-hero">
-                <div class="mini-bg"></div>
-                <div class="mini-grid"></div>
-                <div class="mini-content">
-                  <div class="mini-pill mono"><span class="dotg"></span>AVAILABLE</div>
-                  <div class="mini-title">
-                    <span>Amir Rojas</span>
-                    <span class="mini-accent">Full-Stack<br />Developer.</span>
-                  </div>
-                  <div class="mini-actions">
-                    <span class="mini-btn primary">View projects →</span>
-                    <span class="mini-btn ghost">Contact me</span>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src={heroPreview}
+                alt="Portfolio hero section — live result"
+                class="hero-screenshot"
+              />
             </div>
           </div>
         </div>
@@ -524,56 +516,14 @@
 
   /* Panel 2 — Result */
   .pp-result { width: 100%; max-width: 580px; }
-  .result-preview { display: flex; flex-direction: column; gap: 10px; height: 100%; }
+  .result-preview { display: flex; flex-direction: column; gap: 10px; }
   .preview-tag { font-size: 10px; letter-spacing: 0.1em; color: var(--neon-1); padding-left: 4px; }
-  .mini-hero {
-    position: relative; flex: 1; border-radius: 14px;
-    border: 1px solid rgba(255,255,255,0.14); background: #000; overflow: hidden;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 20px 60px rgba(0,0,0,0.5);
-    min-height: 360px;
+  .hero-screenshot {
+    width: 100%; height: auto; display: block;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 107, 53, 0.06);
   }
-  .mini-bg {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(circle at 30% 40%, rgba(255,107,53,0.22), transparent 55%),
-      radial-gradient(circle at 75% 70%, rgba(255,61,104,0.14), transparent 55%);
-    filter: blur(18px);
-  }
-  .mini-grid {
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 32px 32px;
-    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
-  }
-  .mini-content {
-    position: relative; z-index: 2; padding: 26px 22px; height: 100%;
-    display: flex; flex-direction: column; gap: 16px;
-    align-items: flex-start; justify-content: center;
-  }
-  .mini-pill {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-size: 8.5px; letter-spacing: 0.18em; padding: 5px 10px;
-    border: 1px solid rgba(255,255,255,0.14); border-radius: 999px;
-    color: var(--fg-dim); background: rgba(255,255,255,0.02);
-  }
-  .dotg { width: 5px; height: 5px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 6px #4ade80; }
-  .mini-title {
-    font-size: clamp(22px, 2.2vw, 30px); font-weight: 600;
-    line-height: 0.95; letter-spacing: -0.04em;
-    display: flex; flex-direction: column; gap: 2px;
-  }
-  .mini-accent {
-    background: linear-gradient(120deg, var(--neon-1), var(--neon-2), #ff3d68);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    filter: drop-shadow(0 0 18px rgba(255,107,53,0.4));
-  }
-  .mini-actions { display: flex; gap: 8px; margin-top: 6px; }
-  .mini-btn { font-size: 10px; padding: 7px 12px; border-radius: 999px; letter-spacing: -0.01em; }
-  .mini-btn.primary { background: var(--fg); color: #000; font-weight: 500; }
-  .mini-btn.ghost { border: 1px solid rgba(255,255,255,0.14); color: var(--fg); }
 
   /* Responsive */
   @media (max-width: 1180px) {
@@ -587,6 +537,5 @@
     .pp-pin { height: auto; }
     .pp-panel { position: relative; inset: auto; opacity: 1; transform: none; filter: none; }
     .pp-canvas { padding: 20px 32px; height: auto; }
-    .pp-result { grid-template-columns: 1fr; }
   }
 </style>
