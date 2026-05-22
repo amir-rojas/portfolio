@@ -116,6 +116,18 @@ interface Props {}
     pointer-events: none;
   }
 
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 320px;
+    background: linear-gradient(to bottom, transparent, var(--bg-0));
+    pointer-events: none;
+    z-index: 3;
+  }
+
   .hero-content {
     position: relative;
     z-index: 2;

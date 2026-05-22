@@ -221,19 +221,35 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
 <style>
   .pp { position: relative; padding: 0; }
 
-  .pp-pin { height: 320vh; position: relative; }
+  .pp-pin {
+    height: 320vh;
+    position: relative;
+    isolation: isolate;
+  }
+  .pp-pin::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 18% 30%, rgba(255, 107, 53, 0.05), transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(255, 184, 0, 0.03), transparent 50%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 100%);
+    pointer-events: none;
+    z-index: -1;
+  }
 
   .pp-stage {
     position: sticky;
     top: 0;
     height: 100vh;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: minmax(420px, 520px) 1fr;
     align-items: center;
     overflow: hidden;
-    background:
-      radial-gradient(circle at 18% 30%, rgba(255, 107, 53, 0.05), transparent 50%),
-      radial-gradient(circle at 90% 80%, rgba(255, 184, 0, 0.03), transparent 50%);
   }
 
   .pp-copy {
@@ -292,6 +308,8 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     background: rgba(255, 255, 255, 0.08);
     margin: 8px auto;
     justify-self: center;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
   }
   .pp-rail-fill {
     position: absolute;
@@ -350,10 +368,10 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     letter-spacing: 0.02em;
   }
 
-  .pp-canvas { position: relative; height: 100%; padding: 70px 96px 70px 0; }
+  .pp-canvas { position: relative; height: 100%; padding: 70px 48px 70px 48px; }
   .pp-panel {
     position: absolute;
-    inset: 70px 96px 70px 0;
+    inset: 70px 48px 70px 48px;
     display: grid;
     place-items: center;
     opacity: 0;
@@ -399,7 +417,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
   .browser-bar .tl:nth-child(3), .term-bar .tl:nth-child(3), .code-bar .tl:nth-child(3) { background: #28c840; }
 
   /* Panel 0 — Browser */
-  .pp-browser { max-width: 660px; }
+  .pp-browser { max-width: 760px; }
   .browser-tabs { display: flex; gap: 6px; margin-left: 10px; }
   .browser-tabs .tab {
     font-size: 10px; padding: 5px 10px; border-radius: 6px;
@@ -489,7 +507,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
   }
 
   /* Panel 1 — Terminal */
-  .pp-terminal { max-width: 660px; background: linear-gradient(160deg, #0d0a07, #060606); }
+  .pp-terminal { max-width: 760px; background: linear-gradient(160deg, #0d0a07, #060606); }
   .term-title { font-size: 10px; color: var(--fg-dim); letter-spacing: 0.04em; margin-left: 8px; }
   .term-status { margin-left: auto; font-size: 9px; color: #ff3d68; letter-spacing: 0.1em; }
   .term-body { padding: 22px 26px 26px; font-size: 12px; line-height: 1.7; color: var(--fg-dim); }
@@ -515,7 +533,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
   @keyframes cursorBlink { 50% { opacity: 0; } }
 
   /* Panel 2 — Result */
-  .pp-result { width: 100%; max-width: 580px; }
+  .pp-result { width: 100%; max-width: 900px; }
   .result-preview { display: flex; flex-direction: column; gap: 10px; }
   .preview-tag { font-size: 10px; letter-spacing: 0.1em; color: var(--neon-1); padding-left: 4px; }
   .hero-screenshot {
@@ -528,8 +546,8 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
   /* Responsive */
   @media (max-width: 1180px) {
     .pp-copy { padding: 0 32px 0 48px; }
-    .pp-canvas { padding-right: 48px; }
-    .pp-panel { inset: 70px 48px 70px 0; }
+    .pp-canvas { padding: 70px 24px 70px 24px; }
+    .pp-panel { inset: 70px 24px 70px 24px; }
     .pp-stage { grid-template-columns: minmax(360px, 460px) 1fr; }
   }
   @media (max-width: 860px) {
