@@ -546,6 +546,13 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 107, 53, 0.06);
   }
 
+  /* Disable transitions during nav anchor scroll */
+  :global(html.is-nav-scrolling) .pp-step,
+  :global(html.is-nav-scrolling) .pp-panel,
+  :global(html.is-nav-scrolling) .pp-rail-fill {
+    transition: none !important;
+  }
+
   /* Responsive */
   @media (max-width: 1180px) {
     .pp-copy { padding: 0 32px 0 48px; }

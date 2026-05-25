@@ -10,6 +10,28 @@
   </ul>
 </nav>
 
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+      document.documentElement.classList.add('is-nav-scrolling');
+    });
+  });
+
+  window.addEventListener('scrollend', () => {
+    document.documentElement.classList.remove('is-nav-scrolling');
+  }, { passive: true });
+
+  let navScrollFallback: ReturnType<typeof setTimeout> | null = null;
+  window.addEventListener('scroll', () => {
+    if (!document.documentElement.classList.contains('is-nav-scrolling')) return;
+    if (navScrollFallback) clearTimeout(navScrollFallback);
+    navScrollFallback = setTimeout(() => {
+      document.documentElement.classList.remove('is-nav-scrolling');
+      navScrollFallback = null;
+    }, 400);
+  }, { passive: true });
+</script>
+
 <style>
   .nav {
     position: fixed;

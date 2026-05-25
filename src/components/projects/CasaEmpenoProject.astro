@@ -546,6 +546,12 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
     background: rgba(255,184,0,0.06);
   }
 
+  /* Disable transitions during nav anchor scroll */
+  :global(html.is-nav-scrolling) .ce-layer,
+  :global(html.is-nav-scrolling) .ce-step {
+    transition: none !important;
+  }
+
   /* ── Responsive ──────────────────────────────────── */
   @media (max-width: 1180px) {
     .ce-copy { padding: 0 32px 0 48px; }
