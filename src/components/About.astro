@@ -1,8 +1,28 @@
 ---
 const stack = [
-  'TypeScript', 'React', 'Node.js', 'Astro',
-  'PostgreSQL', 'TanStack Query', 'Zustand',
-  'Tailwind CSS', 'Zod', 'Docker', 'Git',
+  {
+    label: 'Frontend',
+    items: [
+      { name: 'HTML',       icon: 'html5/html5-original' },
+      { name: 'CSS',        icon: 'css3/css3-original' },
+      { name: 'JavaScript', icon: 'javascript/javascript-original' },
+      { name: 'React',      icon: 'react/react-original' },
+      { name: 'Astro',      icon: 'astro/astro-original' },
+    ],
+  },
+  {
+    label: 'Backend',
+    items: [
+      { name: 'Spring',     icon: 'spring/spring-original' },
+      { name: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
+    ],
+  },
+  {
+    label: 'Infra',
+    items: [
+      { name: 'Docker',     icon: 'docker/docker-original' },
+    ],
+  },
 ];
 ---
 
@@ -10,43 +30,64 @@ const stack = [
   <div class="ab-wrap">
     <p class="ab-eyebrow">About me</p>
     <div class="ab-grid">
-
       <!-- ── Left: anchor visual ─────────────────── -->
       <div class="ab-left">
         <h2 class="ab-headline">
-          I write code.<br />
-          <span class="ab-accent">I run. Repeat.</span>
+          Build systems.<br />
+          <span class="ab-accent">Going the distance.</span>
         </h2>
       </div>
 
       <!-- ── Right: content ─────────────────────── -->
       <div class="ab-right">
         <p class="ab-p">
-          I'm a Systems Engineer and full-stack developer who believes technology
-          should have a real-world impact. I specialize in crafting robust,
-          scalable applications with clean architectures, bridging the gap between
-          complex business logic and seamless user experiences.
+          I'm a <strong>Systems Engineer</strong> and full-stack developer who believes technology should
+          have a <strong>real-world impact</strong>. I specialize in crafting robust, scalable
+          applications with clean architectures, bridging the gap between complex business logic and
+          seamless user experiences.
         </p>
         <p class="ab-p">
-          My approach to software is rooted in discipline and craftsmanship.
-          Whether I'm digitalizing a local business, structuring a Screaming
-          Architecture for a backend, or fine-tuning a UI, I build things block
-          by block. I take pride in writing code that solves actual problems and
-          that a teammate can easily read six months later.
+          Good software is <strong>built with intention</strong>. Whether I'm designing a <a
+            href="https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ab-link">Screaming Architecture<span class="ab-ext" aria-hidden="true">↗</span></a
+          > to handle complex business rules or mapping out the perfect UI for a local business, I treat
+          every project as a craft. I prioritize maintainability, ensuring that what I build today remains
+          robust and readable for the team tomorrow.
         </p>
         <p class="ab-p ab-p--last">
-          When I'm out of the terminal, you can usually find me logging miles on
-          a morning run, mixing a perfect Chuflay, or trying to secure the Baron
-          buff in the Jungle.
+          In my spare time, you’ll usually find me tracking my pace on a long <a
+            href="https://www.strava.com/athletes/163782781"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="ab-link">Strava<span class="ab-ext" aria-hidden="true">↗</span></a> run, or actively
+          ignoring the golden rule of <span class="minecraft-hover">Minecraft</span> by digging straight down.
         </p>
 
         <div class="ab-tech">
-          {stack.map((t) => (
-            <span class="ab-tag mono">{t}</span>
+          {stack.map((group) => (
+            <div class="ab-tech-group">
+              <span class="ab-tech-label">{group.label}</span>
+              <div class="ab-tech-items">
+                {group.items.map((tech) => (
+                  <span class="ab-tag">
+                    <img
+                      src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${tech.icon}.svg`}
+                      alt=""
+                      aria-hidden="true"
+                      class="ab-tag-icon"
+                      width="14"
+                      height="14"
+                    />
+                    {tech.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -84,7 +125,8 @@ const stack = [
   }
 
   /* ── Left column ─────────────────────────────── */
-  .ab-left {}
+  .ab-left {
+  }
   .ab-eyebrow {
     font-family: 'Press Start 2P', monospace;
     font-size: 8px;
@@ -134,53 +176,168 @@ const stack = [
     margin-bottom: 48px;
   }
 
+  /* ── Inline highlights & links ──────────────── */
+  .ab-p strong {
+    color: #d8d8d8;
+    font-weight: 600;
+  }
+  .ab-link {
+    color: var(--neon-1);
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--neon-1) 35%, transparent);
+    text-underline-offset: 3px;
+    transition:
+      color 200ms ease,
+      text-decoration-color 200ms ease;
+  }
+  .ab-link:hover {
+    color: var(--neon-2);
+    text-decoration-color: color-mix(in srgb, var(--neon-2) 60%, transparent);
+  }
+  .ab-ext {
+    font-size: 0.7em;
+    margin-left: 2px;
+    vertical-align: super;
+    line-height: 0;
+  }
+  .minecraft-hover {
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    cursor: url('/pickaxe.png') 40 4, auto;
+    color: color-mix(in srgb, var(--neon-1) 45%, var(--fg-dim));
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: color-mix(in srgb, var(--neon-1) 25%, transparent);
+    text-underline-offset: 3px;
+    transition: color 180ms ease;
+  }
+  .minecraft-hover::after {
+    content: 'Minecraft';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    color: #dcdcdc;
+    text-shadow: 2px 2px 0 #3c3c3c;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+  }
+  .minecraft-hover:hover {
+    color: transparent;
+    text-decoration: none;
+  }
+  .minecraft-hover:hover::after {
+    opacity: 1;
+  }
+
   /* ── Tech stack ──────────────────────────────── */
   .ab-tech {
     display: flex;
+    flex-direction: row;
+    gap: 28px;
     flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .ab-tech-group {
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
-  .ab-tag {
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.03);
-    font-size: 11.5px;
-    letter-spacing: 0.04em;
+  .ab-tech-label {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    letter-spacing: 0.06em;
     color: var(--fg-mute);
-    transition: border-color 200ms ease, color 200ms ease;
+    opacity: 0.6;
+  }
+  .ab-tech-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .ab-tag {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.02);
+    font-size: 11px;
+    letter-spacing: 0.03em;
+    color: var(--fg-mute);
+    cursor: pointer;
+    transition:
+      border-color 220ms ease,
+      color 220ms ease,
+      background 220ms ease,
+      box-shadow 220ms ease;
   }
   .ab-tag:hover {
-    border-color: rgba(255, 107, 53, 0.3);
+    border-color: rgba(255, 107, 53, 0.35);
+    background: rgba(255, 107, 53, 0.05);
     color: var(--fg-dim);
+    box-shadow: 0 0 10px rgba(255, 107, 53, 0.12), inset 0 0 10px rgba(255, 107, 53, 0.04);
+  }
+  .ab-tag-icon {
+    width: 13px;
+    height: 13px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: brightness(0) invert(1);
+    opacity: 0.4;
+    transition: filter 220ms ease, opacity 220ms ease;
+  }
+  .ab-tag:hover .ab-tag-icon {
+    filter: brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(335deg);
+    opacity: 1;
   }
 
   /* ── Responsive ──────────────────────────────── */
   @media (max-width: 1100px) {
-    .ab-wrap { padding: 0 48px; }
-    .ab-grid { gap: 56px; }
+    .ab-wrap {
+      padding: 0 48px;
+    }
+    .ab-grid {
+      gap: 56px;
+    }
   }
   @media (max-width: 860px) {
-    .ab-wrap { padding: 0 32px; }
+    .ab-wrap {
+      padding: 0 32px;
+    }
     .ab-grid {
       grid-template-columns: 1fr;
       gap: 40px;
     }
-    .ab-left { position: static; }
-    .ab { padding: 80px 0 100px; }
+    .ab-left {
+      position: static;
+    }
+    .ab {
+      padding: 80px 0 100px;
+    }
   }
   @media (max-width: 560px) {
-    .ab-wrap { padding: 0 20px; }
+    .ab-wrap {
+      padding: 0 20px;
+    }
   }
 </style>
 
 <script>
-  const about    = document.querySelector('.ab') as HTMLElement | null;
+  const about = document.querySelector('.ab') as HTMLElement | null;
   const headline = about?.querySelector('.ab-headline') as HTMLElement | null;
 
   if (about && headline) {
-    const L1    = 'I write code.';
-    const L2    = 'I run. Repeat.';
+    const L1 = 'Build systems.';
+    const L2 = 'Going the distance.';
     const SPEED = 55;
     const PAUSE = 380;
 
@@ -192,14 +349,14 @@ const stack = [
 
     const l1El = headline.querySelector('.ab-type-l1') as HTMLElement;
     const l2El = headline.querySelector('.ab-type-l2') as HTMLElement;
-    const cur  = headline.querySelector('.ab-cursor')  as HTMLElement;
+    const cur = headline.querySelector('.ab-cursor') as HTMLElement;
 
     // Gradient on l2 — applied inline to bypass Astro CSS scoping
     Object.assign(l2El.style, {
-      background:           'linear-gradient(120deg, var(--neon-1), var(--neon-2))',
+      background: 'linear-gradient(120deg, var(--neon-1), var(--neon-2))',
       WebkitBackgroundClip: 'text',
-      backgroundClip:       'text',
-      color:                'transparent',
+      backgroundClip: 'text',
+      color: 'transparent',
     });
 
     // Cursor style + blink via setInterval (same reason — bypasses scoping)
@@ -207,7 +364,7 @@ const stack = [
     let curVisible = true;
     let cursorTick: ReturnType<typeof setInterval>;
 
-    const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
+    const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
     async function typeText(el: HTMLElement, text: string) {
       for (const ch of text) {
@@ -216,23 +373,26 @@ const stack = [
       }
     }
 
-    const obs = new IntersectionObserver(async ([entry]) => {
-      if (!entry.isIntersecting) return;
-      obs.disconnect();
-      about.classList.add('is-visible');
-      await sleep(300);
-      cursorTick = setInterval(() => {
-        curVisible = !curVisible;
-        cur.style.opacity = curVisible ? '1' : '0';
-      }, 700);
-      await typeText(l1El, L1);
-      await sleep(PAUSE);
-      await typeText(l2El, L2);
-      await sleep(2800);
-      clearInterval(cursorTick);
-      cur.style.transition = 'opacity 0.6s';
-      cur.style.opacity    = '0';
-    }, { threshold: 0.08 });
+    const obs = new IntersectionObserver(
+      async ([entry]) => {
+        if (!entry.isIntersecting) return;
+        obs.disconnect();
+        about.classList.add('is-visible');
+        await sleep(300);
+        cursorTick = setInterval(() => {
+          curVisible = !curVisible;
+          cur.style.opacity = curVisible ? '1' : '0';
+        }, 700);
+        await typeText(l1El, L1);
+        await sleep(PAUSE);
+        await typeText(l2El, L2);
+        await sleep(2800);
+        clearInterval(cursorTick);
+        cur.style.transition = 'opacity 0.6s';
+        cur.style.opacity = '0';
+      },
+      { threshold: 0.08 },
+    );
 
     obs.observe(about);
   }
