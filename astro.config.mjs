@@ -3,7 +3,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://amirrojas.dev', // TODO: reemplazar con tu dominio real antes de publicar
+  site: 'https://amir-rojas.github.io',
+  base: '/portfolio',
   output: 'static',
   integrations: [sitemap()],
 });
