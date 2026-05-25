@@ -214,8 +214,10 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     }
   }
 
-  window.addEventListener('scroll', updatePP, { passive: true });
-  updatePP();
+  if (!window.matchMedia('(max-width: 860px)').matches) {
+    window.addEventListener('scroll', updatePP, { passive: true });
+    updatePP();
+  }
 </script>
 
 <style>
@@ -552,9 +554,20 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     .pp-stage { grid-template-columns: minmax(360px, 460px) 1fr; }
   }
   @media (max-width: 860px) {
-    .pp-stage { grid-template-columns: 1fr; height: auto; min-height: 100vh; padding: 80px 0; gap: 24px; }
+    .pp-stage { grid-template-columns: 1fr; height: auto; padding: 80px 0 60px; gap: 24px; }
     .pp-pin { height: auto; }
-    .pp-panel { position: relative; inset: auto; opacity: 1; transform: none; filter: none; }
-    .pp-canvas { padding: 20px 32px; height: auto; }
+    .pp-copy { padding: 0 20px; }
+    .pp-rail { display: none; }
+    .pp-track { grid-template-columns: 1fr; }
+    .pp-step { opacity: 1 !important; transform: none !important; }
+    .pp-step.is-active {
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      background: rgba(255, 255, 255, 0.015) !important;
+      box-shadow: none !important;
+    }
+    .pp-canvas { padding: 0 20px 60px; height: auto; display: flex; flex-direction: column; gap: 20px; }
+    .pp-panel { position: relative; inset: auto; opacity: 1; transform: none; filter: none; pointer-events: auto; }
+    .pp-browser, .pp-terminal { max-width: 100%; }
+    .pp-result { max-width: 100%; }
   }
 </style>

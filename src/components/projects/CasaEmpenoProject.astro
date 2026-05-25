@@ -190,8 +190,10 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
     });
   }
 
-  window.addEventListener('scroll', updateCE, { passive: true });
-  updateCE();
+  if (!window.matchMedia('(max-width: 860px)').matches) {
+    window.addEventListener('scroll', updateCE, { passive: true });
+    updateCE();
+  }
 </script>
 
 <style>
@@ -553,22 +555,33 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
     .ce-stage {
       grid-template-columns: 1fr;
       height: auto;
-      min-height: 100vh;
-      padding: 80px 0;
+      padding: 80px 0 60px;
       gap: 24px;
     }
     .ce-pin { height: auto; }
-    .ce-canvas { height: 380px; }
-    .ce-stack { width: 90%; max-width: 480px; height: 320px; }
-    .ce-layer { transform: none !important; opacity: 1 !important; }
-    .ce-layer.l0,
-    .ce-layer.l1 { display: none; }
-    .ce-stack[data-stage="0"] .ce-layer.l0,
-    .ce-stack[data-stage="1"] .ce-layer.l1,
-    .ce-stack[data-stage="2"] .ce-layer.l2 {
-      display: block;
+    .ce-copy { padding: 0 20px; }
+    .ce-step { opacity: 1 !important; transform: none !important; }
+    .ce-step.is-active {
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      background: rgba(255, 255, 255, 0.015) !important;
+      box-shadow: none !important;
+    }
+    .ce-canvas { height: auto; padding: 0 20px 60px; display: flex; justify-content: center; }
+    .ce-stack {
+      position: static !important;
+      width: 100%;
+      max-width: 480px;
+      height: auto !important;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .ce-layer {
+      position: relative !important;
+      height: 280px;
       opacity: 1 !important;
       transform: none !important;
+      display: block !important;
     }
   }
 </style>
