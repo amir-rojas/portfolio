@@ -1,0 +1,239 @@
+---
+const stack = [
+  'TypeScript', 'React', 'Node.js', 'Astro',
+  'PostgreSQL', 'TanStack Query', 'Zustand',
+  'Tailwind CSS', 'Zod', 'Docker', 'Git',
+];
+---
+
+<section class="ab" id="about" aria-label="About">
+  <div class="ab-wrap">
+    <p class="ab-eyebrow">About me</p>
+    <div class="ab-grid">
+
+      <!-- ── Left: anchor visual ─────────────────── -->
+      <div class="ab-left">
+        <h2 class="ab-headline">
+          I write code.<br />
+          <span class="ab-accent">I run. Repeat.</span>
+        </h2>
+      </div>
+
+      <!-- ── Right: content ─────────────────────── -->
+      <div class="ab-right">
+        <p class="ab-p">
+          I'm a Systems Engineer and full-stack developer who believes technology
+          should have a real-world impact. I specialize in crafting robust,
+          scalable applications with clean architectures, bridging the gap between
+          complex business logic and seamless user experiences.
+        </p>
+        <p class="ab-p">
+          My approach to software is rooted in discipline and craftsmanship.
+          Whether I'm digitalizing a local business, structuring a Screaming
+          Architecture for a backend, or fine-tuning a UI, I build things block
+          by block. I take pride in writing code that solves actual problems and
+          that a teammate can easily read six months later.
+        </p>
+        <p class="ab-p ab-p--last">
+          When I'm out of the terminal, you can usually find me logging miles on
+          a morning run, mixing a perfect Chuflay, or trying to secure the Baron
+          buff in the Jungle.
+        </p>
+
+        <div class="ab-tech">
+          {stack.map((t) => (
+            <span class="ab-tag mono">{t}</span>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Section ─────────────────────────────────── */
+  .ab {
+    scroll-margin-top: 60px;
+    padding: 120px 0 140px;
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .ab.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Wrap ────────────────────────────────────── */
+  .ab-wrap {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 96px;
+  }
+
+  /* ── Asymmetric grid ─────────────────────────── */
+  .ab-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 38%) 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* ── Left column ─────────────────────────────── */
+  .ab-left {}
+  .ab-eyebrow {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fg-mute);
+    margin: 0 0 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .ab-eyebrow::before {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: var(--neon-1);
+    box-shadow: 0 0 8px var(--neon-1);
+    flex-shrink: 0;
+  }
+  .ab-headline {
+    font-size: clamp(34px, 3.8vw, 54px);
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    margin: 0;
+  }
+  .ab-accent {
+    background: linear-gradient(120deg, var(--neon-1), var(--neon-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ── Right column ────────────────────────────── */
+  .ab-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .ab-p {
+    color: var(--fg-dim);
+    font-size: 16px;
+    line-height: 1.8;
+    margin: 0 0 28px;
+  }
+  .ab-p--last {
+    margin-bottom: 48px;
+  }
+
+  /* ── Tech stack ──────────────────────────────── */
+  .ab-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ab-tag {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    color: var(--fg-mute);
+    transition: border-color 200ms ease, color 200ms ease;
+  }
+  .ab-tag:hover {
+    border-color: rgba(255, 107, 53, 0.3);
+    color: var(--fg-dim);
+  }
+
+  /* ── Responsive ──────────────────────────────── */
+  @media (max-width: 1100px) {
+    .ab-wrap { padding: 0 48px; }
+    .ab-grid { gap: 56px; }
+  }
+  @media (max-width: 860px) {
+    .ab-wrap { padding: 0 32px; }
+    .ab-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .ab-left { position: static; }
+    .ab { padding: 80px 0 100px; }
+  }
+  @media (max-width: 560px) {
+    .ab-wrap { padding: 0 20px; }
+  }
+</style>
+
+<script>
+  const about    = document.querySelector('.ab') as HTMLElement | null;
+  const headline = about?.querySelector('.ab-headline') as HTMLElement | null;
+
+  if (about && headline) {
+    const L1    = 'I write code.';
+    const L2    = 'I run. Repeat.';
+    const SPEED = 55;
+    const PAUSE = 380;
+
+    headline.setAttribute('aria-label', `${L1} ${L2}`);
+    headline.innerHTML =
+      `<span class="ab-type-l1"></span><br>` +
+      `<span class="ab-type-l2"></span>` +
+      `<span class="ab-cursor" aria-hidden="true">|</span>`;
+
+    const l1El = headline.querySelector('.ab-type-l1') as HTMLElement;
+    const l2El = headline.querySelector('.ab-type-l2') as HTMLElement;
+    const cur  = headline.querySelector('.ab-cursor')  as HTMLElement;
+
+    // Gradient on l2 — applied inline to bypass Astro CSS scoping
+    Object.assign(l2El.style, {
+      background:           'linear-gradient(120deg, var(--neon-1), var(--neon-2))',
+      WebkitBackgroundClip: 'text',
+      backgroundClip:       'text',
+      color:                'transparent',
+    });
+
+    // Cursor style + blink via setInterval (same reason — bypasses scoping)
+    Object.assign(cur.style, { color: 'var(--neon-1)', marginLeft: '3px', fontWeight: '300' });
+    let curVisible = true;
+    let cursorTick: ReturnType<typeof setInterval>;
+
+    const sleep = (ms: number) => new Promise<void>(r => setTimeout(r, ms));
+
+    async function typeText(el: HTMLElement, text: string) {
+      for (const ch of text) {
+        el.textContent += ch;
+        await sleep(SPEED);
+      }
+    }
+
+    const obs = new IntersectionObserver(async ([entry]) => {
+      if (!entry.isIntersecting) return;
+      obs.disconnect();
+      about.classList.add('is-visible');
+      await sleep(300);
+      cursorTick = setInterval(() => {
+        curVisible = !curVisible;
+        cur.style.opacity = curVisible ? '1' : '0';
+      }, 700);
+      await typeText(l1El, L1);
+      await sleep(PAUSE);
+      await typeText(l2El, L2);
+      await sleep(2800);
+      clearInterval(cursorTick);
+      cur.style.transition = 'opacity 0.6s';
+      cur.style.opacity    = '0';
+    }, { threshold: 0.08 });
+
+    obs.observe(about);
+  }
+</script>

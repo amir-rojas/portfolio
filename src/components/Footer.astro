@@ -88,7 +88,7 @@
     justify-content: center;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 5rem 3rem 3rem;
+    padding: 5rem 6rem 3rem;
     width: 100%;
   }
 
@@ -113,14 +113,17 @@
   }
 
   .footer-hl-line {
-    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
     font-weight: 700;
     letter-spacing: -0.03em;
     color: var(--fg);
   }
 
   .footer-hl-accent {
-    color: var(--neon-1);
+    background: linear-gradient(120deg, var(--neon-1), var(--neon-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .footer-rule {
@@ -136,12 +139,23 @@
   }
 
   .footer-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.688rem;
-    color: var(--fg-dim);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.5rem;
+    color: var(--fg-mute);
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.08em;
+    margin: 0 0 0.875rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .footer-label::before {
+    content: '';
+    width: 16px;
+    height: 1px;
+    background: var(--neon-1);
+    box-shadow: 0 0 6px var(--neon-1);
+    flex-shrink: 0;
   }
 
   .footer-email {
@@ -203,7 +217,7 @@
   .footer-bar-inner {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 1.25rem 3rem;
+    padding: 1.25rem 6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -224,13 +238,18 @@
     vertical-align: middle;
   }
 
+  @media (max-width: 860px) {
+    .footer-inner { padding: 4rem 2rem 3rem; }
+    .footer-bar-inner { padding: 1.25rem 2rem; }
+  }
+
   @media (max-width: 600px) {
     .footer-inner {
-      padding: 4rem 1.5rem 3rem;
+      padding: 4rem 1.25rem 3rem;
     }
 
     .footer-bar-inner {
-      padding: 1.25rem 1.5rem;
+      padding: 1.25rem 1.25rem;
     }
 
     .footer-social {
