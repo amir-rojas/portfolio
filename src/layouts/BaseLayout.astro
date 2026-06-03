@@ -85,6 +85,7 @@ const siteUrl = Astro.site?.href ?? '/';
         const browserLang = navigator.language.startsWith('es') ? 'es' : 'en';
         const lang = stored || browserLang;
         document.documentElement.setAttribute('data-lang', lang);
+        document.documentElement.setAttribute('lang', lang);
       })();
     </script>
     <script is:inline define:vars={{ translationsData: translations }}>
