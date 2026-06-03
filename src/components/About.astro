@@ -178,7 +178,7 @@ const stack = [
 
   /* ── Inline highlights & links ──────────────── */
   .ab-p strong {
-    color: #d8d8d8;
+    color: var(--fg-dim);
     font-weight: 600;
   }
   .ab-link {
@@ -222,8 +222,8 @@ const stack = [
     text-align: center;
     font-family: 'Press Start 2P', monospace;
     font-size: 8px;
-    color: #dcdcdc;
-    text-shadow: 2px 2px 0 #3c3c3c;
+    color: var(--fg-dim);
+    text-shadow: 2px 2px 0 var(--shadow-text);
     white-space: nowrap;
     opacity: 0;
     pointer-events: none;
@@ -268,8 +268,8 @@ const stack = [
     gap: 6px;
     padding: 4px 10px;
     border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-glass);
+    background: var(--surface-glass);
     font-size: 11px;
     letter-spacing: 0.03em;
     color: var(--fg-mute);

@@ -308,7 +308,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
   .pp-rail {
     position: relative;
     width: 1px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--border-soft);
     margin: 8px auto;
     justify-self: center;
     -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%, black 82%, transparent 100%);
@@ -331,7 +331,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     align-items: flex-start;
     gap: 14px;
     padding: 16px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-soft);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.015);
     opacity: 0.32;
@@ -568,7 +568,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     .pp-track { grid-template-columns: 1fr; }
     .pp-step { opacity: 1 !important; transform: none !important; }
     .pp-step.is-active {
-      border-color: rgba(255, 255, 255, 0.08) !important;
+      border-color: var(--border-soft) !important;
       background: rgba(255, 255, 255, 0.015) !important;
       box-shadow: none !important;
     }
