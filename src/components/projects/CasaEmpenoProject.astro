@@ -9,9 +9,9 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
 
       <!-- Columna izquierda: título + pasos -->
       <div class="ce-copy">
-        <div class="eyebrow">Toxdos</div>
-        <h2>A pawnshop,<br /><span class="accent">gone digital.</span></h2>
-        <p class="ce-lede">
+        <div class="eyebrow" data-i18n="casaempeno.eyebrow">Toxdos</div>
+        <h2><span data-i18n="casaempeno.heading1">A pawnshop,</span><br /><span class="accent" data-i18n="casaempeno.heading2">gone digital.</span></h2>
+        <p class="ce-lede" data-i18n="casaempeno.lede">
           Full management system for a real pawnshop in Bolivia — contracts,
           interest, cash sessions, clients and sales. Built from scratch,
           shipped to production in March 2026.
@@ -21,22 +21,22 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
           <div class="ce-step is-active" data-step="0">
             <span class="idx mono">[ 01 ]</span>
             <div class="body">
-              <span class="lbl">The Problem</span>
-              <span class="desc">Real client · paper-based · Potosí, Bolivia</span>
+              <span class="lbl" data-i18n="casaempeno.step1Label">The Problem</span>
+              <span class="desc" data-i18n="casaempeno.step1Desc">Real client · paper-based · Potosí, Bolivia</span>
             </div>
           </div>
           <div class="ce-step" data-step="1">
             <span class="idx mono">[ 02 ]</span>
             <div class="body">
-              <span class="lbl">Architecture</span>
-              <span class="desc">Screaming Architecture · domain per module</span>
+              <span class="lbl" data-i18n="casaempeno.step2Label">Architecture</span>
+              <span class="desc" data-i18n="casaempeno.step2Desc">Screaming Architecture · domain per module</span>
             </div>
           </div>
           <div class="ce-step" data-step="2">
             <span class="idx mono">[ 03 ]</span>
             <div class="body">
-              <span class="lbl">In Production</span>
-              <span class="desc">Live · Cloudflare + Render + Supabase</span>
+              <span class="lbl" data-i18n="casaempeno.step3Label">In Production</span>
+              <span class="desc" data-i18n="casaempeno.step3Desc">Live · Cloudflare + Render + Supabase</span>
             </div>
           </div>
         </div>
@@ -62,15 +62,15 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
               </div>
               <div class="brief-divider"></div>
               <div class="brief-section">
-                <div class="sec-hdr mono">## the problem</div>
-                <p class="sec-text">
+                <div class="sec-hdr mono" data-i18n="casaempeno.briefSectionProblem">## the problem</div>
+                <p class="sec-text" data-i18n="casaempeno.briefProblemText">
                   Tracking contracts, interest payments and item inventory on paper.
                   No visibility into due dates, cash flow or customer history.
                 </p>
               </div>
               <div class="brief-divider"></div>
               <div class="brief-section">
-                <div class="sec-hdr mono">## domain entities</div>
+                <div class="sec-hdr mono" data-i18n="casaempeno.briefSectionDomains">## domain entities</div>
                 <div class="dom-list">
                   <div class="dom-item">
                     <span class="dom-dot"></span>
@@ -104,7 +104,7 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
 
           <!-- Capa 1 — Architecture: terminal -->
           <div class="ce-layer l1">
-            <span class="layer-tag mono"><span class="ltdot"></span>architecture</span>
+            <span class="layer-tag mono"><span class="ltdot"></span><span data-i18n="casaempeno.archLabel">architecture</span></span>
             <div class="term-body mono">
               <div class="cm"># structure mirrors the business, not the framework</div>
               <div class="sp"></div>

@@ -9,9 +9,9 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
 
       <!-- Columna izquierda: título + pasos -->
       <div class="pp-copy">
-        <div class="eyebrow">Portfolio</div>
-        <h2>Designing<br /><span class="accent">this very site.</span></h2>
-        <p class="pp-lede">
+        <div class="eyebrow" data-i18n="portfolio.eyebrow">Portfolio</div>
+        <h2><span data-i18n="portfolio.heading1">Designing</span><br /><span class="accent" data-i18n="portfolio.heading2">this very site.</span></h2>
+        <p class="pp-lede" data-i18n="portfolio.lede">
           A meta project — documenting the process of thinking, deciding and
           building the portfolio you're reading right now.
         </p>
@@ -24,22 +24,22 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
             <div class="pp-step is-active" data-step="0">
               <span class="idx mono">[ 01 ]</span>
               <div class="body">
-                <span class="lbl">Research</span>
-                <span class="desc">Framework search · design references · Claude Design</span>
+                <span class="lbl" data-i18n="portfolio.step1Label">Research</span>
+                <span class="desc" data-i18n="portfolio.step1Desc">Framework search · design references · Claude Design</span>
               </div>
             </div>
             <div class="pp-step" data-step="1">
               <span class="idx mono">[ 02 ]</span>
               <div class="body">
-                <span class="lbl">Decision — Why Astro?</span>
-                <span class="desc">Decision log · real trade-offs · new territory</span>
+                <span class="lbl" data-i18n="portfolio.step2Label">Decision — Why Astro?</span>
+                <span class="desc" data-i18n="portfolio.step2Desc">Decision log · real trade-offs · new territory</span>
               </div>
             </div>
             <div class="pp-step" data-step="2">
               <span class="idx mono">[ 03 ]</span>
               <div class="body">
-                <span class="lbl">Result</span>
-                <span class="desc">The live hero section</span>
+                <span class="lbl" data-i18n="portfolio.step3Label">Result</span>
+                <span class="desc" data-i18n="portfolio.step3Desc">The live hero section</span>
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
         <div class="pp-panel" data-panel="2">
           <div class="pp-result">
             <div class="result-preview">
-              <div class="preview-tag mono">→ live result</div>
+              <div class="preview-tag mono" data-i18n="portfolio.resultCaption">→ live result</div>
               <Image
                 src={heroPreview}
                 alt="Portfolio hero section — live result"

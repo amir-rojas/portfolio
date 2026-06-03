@@ -52,17 +52,17 @@ interface Props {}
     <!-- 1. Tag pill -->
     <div class="hero-tag">
       <span class="pulse"></span>
-      <span>AMIR ROJAS HAS JOINED THE GAME.</span>
+      <span data-i18n="hero.badge">AMIR ROJAS HAS JOINED THE GAME.</span>
     </div>
 
     <!-- 2. Título en dos líneas, segunda con clase accent -->
     <h1 class="hero-title">
-      Crafting Code<br />
-      <span class="accent">Real Impact</span>
+      <span data-i18n="hero.heading1">Crafting Code</span><br />
+      <span class="accent" data-i18n="hero.heading2">Real Impact</span>
     </h1>
 
     <!-- 3. Bio -->
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n="hero.sub">
       As a Systems Engineer, I build web and mobile software block by block. I combine clean
       architectures with real-world solutions to create tools that improve people's everyday lives.
     </p>
@@ -70,10 +70,10 @@ interface Props {}
     <!-- 4. CTAs envueltos en un div -->
     <div class="hero-cta">
       <a href="#projects" class="btn-primary">
-        <span>View projects</span>
+        <span data-i18n="hero.btnPrimary">View projects</span>
         <span>→</span>
       </a>
-      <a href="#contact" class="btn-ghost">Contact me</a>
+      <a href="#contact" class="btn-ghost" data-i18n="hero.btnGhost">Contact me</a>
     </div>
   </div>
 </section>

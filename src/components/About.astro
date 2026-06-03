@@ -2,6 +2,7 @@
 const stack = [
   {
     label: 'Frontend',
+    i18nKey: 'about.stackFrontend',
     items: [
       { name: 'HTML',       icon: 'html5/html5-original' },
       { name: 'CSS',        icon: 'css3/css3-original' },
@@ -12,6 +13,7 @@ const stack = [
   },
   {
     label: 'Backend',
+    i18nKey: 'about.stackBackend',
     items: [
       { name: 'Spring',     icon: 'spring/spring-original' },
       { name: 'PostgreSQL', icon: 'postgresql/postgresql-original' },
@@ -19,6 +21,7 @@ const stack = [
   },
   {
     label: 'Infra',
+    i18nKey: 'about.stackInfra',
     items: [
       { name: 'Docker',     icon: 'docker/docker-original' },
     ],
@@ -28,7 +31,7 @@ const stack = [
 
 <section class="ab" id="about" aria-label="About">
   <div class="ab-wrap">
-    <p class="ab-eyebrow">About me</p>
+    <p class="ab-eyebrow" data-i18n="about.eyebrow">About me</p>
     <div class="ab-grid">
       <!-- ── Left: anchor visual ─────────────────── -->
       <div class="ab-left">
@@ -40,14 +43,14 @@ const stack = [
 
       <!-- ── Right: content ─────────────────────── -->
       <div class="ab-right">
-        <p class="ab-p">
-          I'm a <strong>Systems Engineer</strong> and full-stack developer who believes technology should
+        <p class="ab-p" data-i18n-html="about.para1">
+          I’m a <strong>Systems Engineer</strong> and full-stack developer who believes technology should
           have a <strong>real-world impact</strong>. I specialize in crafting robust, scalable
           applications with clean architectures, bridging the gap between complex business logic and
           seamless user experiences.
         </p>
-        <p class="ab-p">
-          Good software is <strong>built with intention</strong>. Whether I'm designing a <a
+        <p class="ab-p" data-i18n-html="about.para2">
+          Good software is <strong>built with intention</strong>. Whether I’m designing a <a
             href="https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html"
             target="_blank"
             rel="noopener noreferrer"
@@ -56,7 +59,7 @@ const stack = [
           every project as a craft. I prioritize maintainability, ensuring that what I build today remains
           robust and readable for the team tomorrow.
         </p>
-        <p class="ab-p ab-p--last">
+        <p class="ab-p ab-p--last" data-i18n-html="about.para3">
           In my spare time, you’ll usually find me tracking my pace on a long <a
             href="https://www.strava.com/athletes/163782781"
             target="_blank"
@@ -68,7 +71,7 @@ const stack = [
         <div class="ab-tech">
           {stack.map((group) => (
             <div class="ab-tech-group">
-              <span class="ab-tech-label">{group.label}</span>
+              <span class="ab-tech-label" data-i18n={group.i18nKey}>{group.label}</span>
               <div class="ab-tech-items">
                 {group.items.map((tech) => (
                   <span class="ab-tag">
@@ -200,7 +203,7 @@ const stack = [
     vertical-align: super;
     line-height: 0;
   }
-  .minecraft-hover {
+  :global(.minecraft-hover) {
     display: inline-block;
     vertical-align: baseline;
     position: relative;
@@ -212,7 +215,7 @@ const stack = [
     text-underline-offset: 3px;
     transition: color 180ms ease;
   }
-  .minecraft-hover::after {
+  :global(.minecraft-hover)::after {
     content: 'Minecraft';
     position: absolute;
     top: 50%;
@@ -229,11 +232,11 @@ const stack = [
     pointer-events: none;
     transition: opacity 180ms ease;
   }
-  .minecraft-hover:hover {
+  :global(.minecraft-hover):hover {
     color: transparent;
     text-decoration: none;
   }
-  .minecraft-hover:hover::after {
+  :global(.minecraft-hover):hover::after {
     opacity: 1;
   }
 
@@ -336,12 +339,9 @@ const stack = [
   const headline = about?.querySelector('.ab-headline') as HTMLElement | null;
 
   if (about && headline) {
-    const L1 = 'Build systems.';
-    const L2 = 'Going the distance.';
     const SPEED = 55;
     const PAUSE = 380;
 
-    headline.setAttribute('aria-label', `${L1} ${L2}`);
     headline.innerHTML =
       `<span class="ab-type-l1"></span><br>` +
       `<span class="ab-type-l2"></span>` +
@@ -350,6 +350,15 @@ const stack = [
     const l1El = headline.querySelector('.ab-type-l1') as HTMLElement;
     const l2El = headline.querySelector('.ab-type-l2') as HTMLElement;
     const cur = headline.querySelector('.ab-cursor') as HTMLElement;
+
+    function getHeadlines() {
+      const lang = document.documentElement.getAttribute('data-lang') || 'en';
+      const i18n = (window as any).__i18n;
+      return {
+        L1: (i18n && i18n[lang]?.about?.headline1) || 'Build systems.',
+        L2: (i18n && i18n[lang]?.about?.headline2) || 'Going the distance.',
+      };
+    }
 
     // Gradient on l2 — applied inline to bypass Astro CSS scoping
     Object.assign(l2El.style, {
@@ -363,6 +372,7 @@ const stack = [
     Object.assign(cur.style, { color: 'var(--neon-1)', marginLeft: '3px', fontWeight: '300' });
     let curVisible = true;
     let cursorTick: ReturnType<typeof setInterval>;
+    let animationDone = false;
 
     const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
@@ -377,6 +387,8 @@ const stack = [
       async ([entry]) => {
         if (!entry.isIntersecting) return;
         obs.disconnect();
+        const { L1, L2 } = getHeadlines();
+        headline.setAttribute('aria-label', `${L1} ${L2}`);
         about.classList.add('is-visible');
         await sleep(300);
         cursorTick = setInterval(() => {
@@ -390,10 +402,20 @@ const stack = [
         clearInterval(cursorTick);
         cur.style.transition = 'opacity 0.6s';
         cur.style.opacity = '0';
+        animationDone = true;
       },
       { threshold: 0.08 },
     );
 
     obs.observe(about);
+
+    new MutationObserver(() => {
+      const { L1, L2 } = getHeadlines();
+      headline.setAttribute('aria-label', `${L1} ${L2}`);
+      if (animationDone) {
+        l1El.textContent = L1;
+        l2El.textContent = L2;
+      }
+    }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
   }
 </script>
