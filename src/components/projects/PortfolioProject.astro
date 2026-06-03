@@ -171,6 +171,9 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
                 src={heroPreview}
                 alt="Portfolio hero section — live result"
                 class="hero-screenshot"
+                widths={[400, 760, 1200]}
+                sizes="(max-width: 860px) 100vw, 760px"
+                loading="lazy"
               />
             </div>
           </div>
@@ -182,41 +185,16 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
 </section>
 
 <script>
+  import { initScrollStage } from '../../scripts/scrollStage';
+
   const section = document.querySelector('#portfolio-personal');
-  const ppPin = section?.querySelector('.pp-pin') ?? null;
-  const ppSteps = section ? Array.from(section.querySelectorAll('.pp-step')) : [];
-  const ppPanels = section ? Array.from(section.querySelectorAll('.pp-panel')) : [];
-  const ppRailFill = section?.querySelector('.pp-rail-fill') ?? null;
-
-  function updatePP() {
-    if (!ppPin) return;
-    const r = ppPin.getBoundingClientRect();
-    const vh = window.innerHeight;
-    const total = r.height - vh;
-    const passed = Math.min(Math.max(-r.top, 0), total);
-    const p = total > 0 ? passed / total : 0;
-
-    let stage = 0;
-    if (p >= 0.67) stage = 2;
-    else if (p >= 0.34) stage = 1;
-
-    ppSteps.forEach((el, idx) => {
-      el.classList.toggle('is-active', idx === stage);
-      el.classList.toggle('is-done', idx < stage);
+  if (section) {
+    initScrollStage({
+      pinEl:      section.querySelector('.pp-pin')!,
+      stepEls:    Array.from(section.querySelectorAll('.pp-step')),
+      panelEls:   Array.from(section.querySelectorAll('.pp-panel')),
+      railFillEl: section.querySelector<HTMLElement>('.pp-rail-fill'),
     });
-    ppPanels.forEach((el, idx) => {
-      el.classList.toggle('is-active', idx === stage);
-    });
-
-    if (ppRailFill) {
-      const fill = Math.min(100, Math.max(6, p * 100));
-      (ppRailFill as HTMLElement).style.setProperty('--prog', fill.toFixed(1) + '%');
-    }
-  }
-
-  if (!window.matchMedia('(max-width: 860px)').matches) {
-    window.addEventListener('scroll', updatePP, { passive: true });
-    updatePP();
   }
 </script>
 

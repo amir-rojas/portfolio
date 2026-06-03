@@ -145,6 +145,9 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
                 src={toxdosDash}
                 alt="Toxdos dashboard — pawnshop management system in production"
                 class="ce-screenshot"
+                widths={[400, 760, 1200]}
+                sizes="(max-width: 860px) 100vw, 760px"
+                loading="lazy"
               />
               <div class="result-footer mono">
                 <span class="dep-strip">
@@ -167,32 +170,15 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
 </section>
 
 <script>
+  import { initScrollStage } from '../../scripts/scrollStage';
+
   const section = document.querySelector('#casa-empeno');
-  const cePin   = section?.querySelector('.ce-pin') ?? null;
-  const ceStack = section?.querySelector('.ce-stack') as HTMLElement | null;
-  const ceSteps = section ? Array.from(section.querySelectorAll('.ce-step')) : [];
-
-  function updateCE() {
-    if (!cePin || !ceStack) return;
-    const r     = cePin.getBoundingClientRect();
-    const vh    = window.innerHeight;
-    const total = r.height - vh;
-    const p     = total > 0 ? Math.min(Math.max(-r.top, 0), total) / total : 0;
-
-    let stage = 0;
-    if (p >= 0.67) stage = 2;
-    else if (p >= 0.34) stage = 1;
-
-    ceStack.dataset.stage = String(stage);
-    ceSteps.forEach((el, idx) => {
-      el.classList.toggle('is-active', idx === stage);
-      el.classList.toggle('is-done', idx < stage);
+  if (section) {
+    initScrollStage({
+      pinEl:   section.querySelector('.ce-pin')!,
+      stepEls: Array.from(section.querySelectorAll('.ce-step')),
+      stackEl: section.querySelector<HTMLElement>('.ce-stack'),
     });
-  }
-
-  if (!window.matchMedia('(max-width: 860px)').matches) {
-    window.addEventListener('scroll', updateCE, { passive: true });
-    updateCE();
   }
 </script>
 
