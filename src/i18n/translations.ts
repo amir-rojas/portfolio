@@ -80,7 +80,7 @@ export const translations = {
     about: {
       eyebrow: 'Sobre mí',
       headline1: 'Construir sistemas.',
-      headline2: 'Siempre a fondo.',
+      headline2: 'Marcando el ritmo.',
       para1: `Soy <strong>Ingeniero de Sistemas</strong> y desarrollador full-stack que cree que la tecnología debe tener un <strong>impacto real</strong>. Me especializo en construir aplicaciones robustas y escalables con arquitecturas limpias, cerrando la brecha entre la lógica de negocio compleja y experiencias de usuario fluidas.`,
       para2: `El buen software se <strong>construye con intención</strong>. Ya sea diseñando una <a href="https://blog.cleancoder.com/uncle-bob/2011/09/30/Screaming-Architecture.html" target="_blank" rel="noopener noreferrer" class="ab-link">Screaming Architecture<span class="ab-ext" aria-hidden="true">↗</span></a> para manejar reglas de negocio complejas o trazando la UI perfecta para un negocio local, trato cada proyecto como un oficio. Priorizo la mantenibilidad para que lo que construyo hoy siga siendo robusto y legible para el equipo del mañana.`,
       para3: `En mi tiempo libre, suelo estar midiendo mi ritmo en una larga carrera por <a href="https://www.strava.com/athletes/163782781" target="_blank" rel="noopener noreferrer" class="ab-link">Strava<span class="ab-ext" aria-hidden="true">↗</span></a>, o ignorando activamente la regla de oro de <span class="minecraft-hover">Minecraft</span> cavando directo hacia abajo.`,

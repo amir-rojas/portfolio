@@ -276,7 +276,7 @@ const stack = [
     font-size: 11px;
     letter-spacing: 0.03em;
     color: var(--fg-mute);
-    cursor: pointer;
+    cursor: default;
     transition:
       border-color 220ms ease,
       color 220ms ease,
@@ -383,6 +383,8 @@ const stack = [
       }
     }
 
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const obs = new IntersectionObserver(
       async ([entry]) => {
         if (!entry.isIntersecting) return;
@@ -390,6 +392,13 @@ const stack = [
         const { L1, L2 } = getHeadlines();
         headline.setAttribute('aria-label', `${L1} ${L2}`);
         about.classList.add('is-visible');
+        if (reducedMotion) {
+          l1El.textContent = L1;
+          l2El.textContent = L2;
+          cur.style.display = 'none';
+          animationDone = true;
+          return;
+        }
         await sleep(300);
         cursorTick = setInterval(() => {
           curVisible = !curVisible;
