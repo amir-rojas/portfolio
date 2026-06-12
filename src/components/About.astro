@@ -180,11 +180,12 @@ const stack = [
   }
 
   /* ── Inline highlights & links ──────────────── */
-  .ab-p strong {
+  /* :global porque el i18n reinyecta este HTML sin el scope de Astro */
+  .ab-p :global(strong) {
     color: var(--fg-dim);
     font-weight: 600;
   }
-  .ab-link {
+  .ab-p :global(.ab-link) {
     color: var(--neon-1);
     text-decoration: underline;
     text-decoration-color: color-mix(in srgb, var(--neon-1) 35%, transparent);
@@ -193,11 +194,11 @@ const stack = [
       color 200ms ease,
       text-decoration-color 200ms ease;
   }
-  .ab-link:hover {
+  .ab-p :global(.ab-link:hover) {
     color: var(--neon-2);
     text-decoration-color: color-mix(in srgb, var(--neon-2) 60%, transparent);
   }
-  .ab-ext {
+  .ab-p :global(.ab-ext) {
     font-size: 0.7em;
     margin-left: 2px;
     vertical-align: super;
@@ -294,9 +295,12 @@ const stack = [
     height: 13px;
     object-fit: contain;
     flex-shrink: 0;
-    filter: brightness(0) invert(1);
+    filter: brightness(0);
     opacity: 0.4;
     transition: filter 220ms ease, opacity 220ms ease;
+  }
+  :global([data-theme="dark"]) .ab-tag-icon {
+    filter: brightness(0) invert(1);
   }
   .ab-tag:hover .ab-tag-icon {
     filter: brightness(0) invert(1) sepia(1) saturate(6) hue-rotate(335deg);

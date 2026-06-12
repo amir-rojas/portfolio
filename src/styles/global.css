@@ -1,12 +1,12 @@
 :root {
-  --bg-0: #000000;
-  --bg-1: #060606;
-  --bg-2: #0a0a0a;
-  --bg-3: #111111;
+  --bg-0: #f8f8f8;
+  --bg-1: #f2f2f2;
+  --bg-2: #e8e8e8;
+  --bg-3: #dedede;
 
-  --fg: #f5f5f7;
-  --fg-dim: #a1a1a6;
-  --fg-mute: #8a8a90;
+  --fg: #111111;
+  --fg-dim: #4a4a55;
+  --fg-mute: #707078;
 
   --neon-1: #ff6b35;
   --neon-2: #ffb800;
@@ -14,32 +14,6 @@
 
   --t-fast: 220ms;
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
-
-  --nav-bg: rgba(0, 0, 0, 0.6);
-  --nav-border: rgba(255, 255, 255, 0.06);
-  --grid-line: rgba(255, 255, 255, 0.025);
-  --border-glass: rgba(255, 255, 255, 0.07);
-  --border-soft: rgba(255, 255, 255, 0.08);
-  --border-dim: rgba(255, 255, 255, 0.14);
-  --border-hover: rgba(255, 255, 255, 0.4);
-  --surface-glass: rgba(255, 255, 255, 0.02);
-  --surface-low: rgba(255, 255, 255, 0.04);
-  --surface-mid: rgba(255, 255, 255, 0.07);
-  --shadow-heavy: rgba(0, 0, 0, 0.5);
-  --shadow-card: rgba(0, 0, 0, 0.55);
-  --shadow-text: #3c3c3c;
-
-  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
-}
-
-[data-theme="light"] {
-  --bg-0: #f8f8f8;
-  --bg-1: #f2f2f2;
-  --bg-2: #e8e8e8;
-  --bg-3: #dedede;
-  --fg: #111111;
-  --fg-dim: #4a4a55;
-  --fg-mute: #707078;
 
   --nav-bg: rgba(248, 248, 248, 0.85);
   --nav-border: rgba(0, 0, 0, 0.08);
@@ -54,6 +28,32 @@
   --shadow-heavy: rgba(0, 0, 0, 0.15);
   --shadow-card: rgba(0, 0, 0, 0.12);
   --shadow-text: #b0b0b0;
+
+  font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg-0: #000000;
+  --bg-1: #060606;
+  --bg-2: #0a0a0a;
+  --bg-3: #111111;
+  --fg: #f5f5f7;
+  --fg-dim: #a1a1a6;
+  --fg-mute: #8a8a90;
+
+  --nav-bg: rgba(0, 0, 0, 0.6);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --grid-line: rgba(255, 255, 255, 0.025);
+  --border-glass: rgba(255, 255, 255, 0.07);
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --border-dim: rgba(255, 255, 255, 0.14);
+  --border-hover: rgba(255, 255, 255, 0.4);
+  --surface-glass: rgba(255, 255, 255, 0.02);
+  --surface-low: rgba(255, 255, 255, 0.04);
+  --surface-mid: rgba(255, 255, 255, 0.07);
+  --shadow-heavy: rgba(0, 0, 0, 0.5);
+  --shadow-card: rgba(0, 0, 0, 0.55);
+  --shadow-text: #3c3c3c;
 }
 
 * {

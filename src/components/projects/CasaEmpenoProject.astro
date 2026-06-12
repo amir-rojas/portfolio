@@ -320,6 +320,11 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
   }
 
   .ce-layer {
+    /* Mockups siempre oscuros, independientes del tema */
+    --fg: #f5f5f7;
+    --fg-dim: #a1a1a6;
+    --fg-mute: #8a8a90;
+    --border-soft: rgba(255, 255, 255, 0.08);
     position: absolute;
     inset: 0;
     border-radius: 14px;
@@ -555,7 +560,7 @@ import toxdosDash from '../../assets/screenshots/toxdos-dash.png';
     .ce-step { opacity: 1 !important; transform: none !important; }
     .ce-step.is-active {
       border-color: var(--border-soft) !important;
-      background: rgba(255, 255, 255, 0.015) !important;
+      background: var(--surface-glass) !important;
       box-shadow: none !important;
     }
     .ce-canvas { height: auto; padding: 0 20px 60px; display: flex; justify-content: center; }

@@ -371,8 +371,12 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     pointer-events: auto;
   }
 
-  /* Chrome compartido */
+  /* Chrome compartido — mockups siempre oscuros, independientes del tema */
   .pp-browser, .pp-terminal, .result-code {
+    --fg: #f5f5f7;
+    --fg-dim: #a1a1a6;
+    --fg-mute: #8a8a90;
+    --border-soft: rgba(255, 255, 255, 0.08);
     width: 100%;
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.14);
@@ -547,7 +551,7 @@ import heroPreview from '../../assets/screenshots/hero-preview.png';
     .pp-step { opacity: 1 !important; transform: none !important; }
     .pp-step.is-active {
       border-color: var(--border-soft) !important;
-      background: rgba(255, 255, 255, 0.015) !important;
+      background: var(--surface-glass) !important;
       box-shadow: none !important;
     }
     .pp-canvas { padding: 0 20px 60px; height: auto; display: flex; flex-direction: column; gap: 20px; }

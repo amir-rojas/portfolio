@@ -57,7 +57,7 @@
   // Theme toggle
   const themeToggle = document.getElementById('theme-toggle');
   themeToggle?.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
     const next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     localStorage.setItem('theme', next);
@@ -198,9 +198,9 @@
     font-weight: 600;
   }
 
-  .icon-sun { display: none; }
-  :global([data-theme="light"]) .icon-sun { display: block; }
-  :global([data-theme="light"]) .icon-moon { display: none; }
+  .icon-moon { display: none; }
+  :global([data-theme="dark"]) .icon-moon { display: block; }
+  :global([data-theme="dark"]) .icon-sun { display: none; }
 
   .theme-toggle {
     background: none;
